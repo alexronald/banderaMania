@@ -1,0 +1,1211 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://font/Montserrat-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://recursos/fondo.png" type="Texture" id=2]
+[ext_resource path="res://font/Montserrat-Black.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://script/viewStore.gd" type="Script" id=4]
+[ext_resource path="res://recursos/icon_coin.png" type="Texture" id=5]
+[ext_resource path="res://recursos/icon_atras.png" type="Texture" id=6]
+[ext_resource path="res://script/ScrollContainer.gd" type="Script" id=7]
+[ext_resource path="res://recursos/icon_ game1.png" type="Texture" id=8]
+[ext_resource path="res://recursos/icon_ game2.png" type="Texture" id=9]
+[ext_resource path="res://recursos/icon_ game3.png" type="Texture" id=10]
+[ext_resource path="res://recursos/ad.png" type="Texture" id=11]
+[ext_resource path="res://recursos/ad_video.png" type="Texture" id=12]
+[ext_resource path="res://recursos/whatsap.png" type="Texture" id=13]
+[ext_resource path="res://recursos/facebook.png" type="Texture" id=14]
+[ext_resource path="res://recursos/tiktok.png" type="Texture" id=15]
+[ext_resource path="res://recursos/insta.png" type="Texture" id=16]
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="ShortCut" id=6]
+
+[sub_resource type="ButtonGroup" id=7]
+
+[sub_resource type="DynamicFont" id=10]
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=16]
+bg_color = Color( 0.133333, 0.133333, 0.180392, 0.6 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.215686, 0.235294, 0.313726, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=17]
+bg_color = Color( 0.215686, 0.235294, 0.313726, 0.721569 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.133333, 0.133333, 0.180392, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=18]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.133333, 0.133333, 0.180392, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.133333, 0.133333, 0.180392, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.945098, 0.647059, 0.34902, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=12]
+size = 18
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=13]
+outline_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=14]
+use_filter = true
+font_data = ExtResource( 3 )
+
+[sub_resource type="StyleBoxFlat" id=15]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 1, 1, 1, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id=20]
+bg_color = Color( 0.945098, 0.647059, 0.34902, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=19]
+bg_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="viewStore" type="Control"]
+pause_mode = 2
+script = ExtResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 0.878431, 0.101961, 0.101961, 1 )
+margin_right = 540.0
+margin_bottom = 1170.0
+texture = ExtResource( 2 )
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 0.081
+margin_bottom = 0.230003
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+margin_right = 540.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 540, 90 )
+color = Color( 0.133333, 0.133333, 0.180392, 1 )
+
+[node name="container" type="HBoxContainer" parent="Control"]
+margin_right = 540.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 540, 95 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+custom_constants/separation = 220
+alignment = 1
+
+[node name="containe2" type="HBoxContainer" parent="Control/container"]
+margin_left = 15.0
+margin_right = 170.0
+margin_bottom = 95.0
+
+[node name="btnCerrar" type="Button" parent="Control/container/containe2"]
+margin_right = 46.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 4 )
+icon = ExtResource( 6 )
+flat = true
+
+[node name="Titulo" type="Label" parent="Control/container/containe2"]
+margin_left = 50.0
+margin_top = 31.0
+margin_right = 155.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 5 )
+text = "$STORE"
+
+[node name="Container1" type="HBoxContainer" parent="Control/container"]
+margin_left = 390.0
+margin_right = 525.0
+margin_bottom = 95.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="coin" type="Button" parent="Control/container/Container1"]
+margin_right = 135.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 135, 0 )
+focus_mode = 1
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 1
+keep_pressed_outside = true
+shortcut = SubResource( 6 )
+group = SubResource( 7 )
+text = "00"
+icon = ExtResource( 5 )
+flat = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_top = 110.0
+margin_right = 550.0
+margin_bottom = 1060.0
+rect_min_size = Vector2( 550, 950 )
+size_flags_horizontal = 3
+scroll_vertical = 442
+script = ExtResource( 7 )
+delta_for_swipe = Vector2( 8, 8 )
+
+[node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
+margin_top = -442.0
+margin_right = 540.0
+margin_bottom = 950.0
+rect_min_size = Vector2( 540, 1150 )
+
+[node name="VBoxContainer" type="GridContainer" parent="ScrollContainer/CenterContainer"]
+margin_left = 20.0
+margin_right = 520.0
+margin_bottom = 1392.0
+rect_min_size = Vector2( 500, 400 )
+custom_constants/hseparation = 0
+
+[node name="titleMoreGame" type="Control" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_right = 500.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="title" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/titleMoreGame"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+text = "$MORE_GAME"
+align = 1
+valign = 1
+
+[node name="itemButton" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 84.0
+margin_right = 500.0
+margin_bottom = 164.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton/GridContainer2"]
+margin_right = 57.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 8 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton/GridContainer2"]
+margin_left = 61.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 331.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "Quiz English"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 331.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 28.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "100"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 32.0
+margin_right = 96.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="itemButton2" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 168.0
+margin_right = 500.0
+margin_bottom = 248.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton2"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton2/GridContainer2"]
+margin_right = 57.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 10 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton2/GridContainer2"]
+margin_left = 61.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton2/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 331.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "Quiz-Química"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton2/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 331.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton2/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 28.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "100"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton2/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 32.0
+margin_right = 96.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton2/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="itemButton3" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 252.0
+margin_right = 500.0
+margin_bottom = 332.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton3"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton3/GridContainer2"]
+margin_right = 65.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 9 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton3/GridContainer2"]
+margin_left = 69.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton3/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 323.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "Flying Saucer Game"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton3/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 323.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton3/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 28.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "100"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton3/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 32.0
+margin_right = 96.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton3/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="titleFreeCoins" type="Control" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 336.0
+margin_right = 500.0
+margin_bottom = 416.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="title" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/titleFreeCoins"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+text = "$FREE_COINS"
+align = 1
+valign = 1
+
+[node name="itemButton5" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 420.0
+margin_right = 500.0
+margin_bottom = 500.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton5"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton5/GridContainer2"]
+margin_right = 40.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton5/GridContainer2"]
+margin_left = 44.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton5/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 348.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "$WATCH_ADS_VIDEO"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton5/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 348.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton5/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 21.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "60"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton5/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 25.0
+margin_right = 89.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton5/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="itemButton6" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 504.0
+margin_right = 500.0
+margin_bottom = 584.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton6"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton6/GridContainer2"]
+margin_right = 40.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 11 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton6/GridContainer2"]
+margin_left = 44.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton6/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 348.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "$WATCH_AD_BANNER"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton6/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 348.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton6/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 20.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "30"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton6/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 24.0
+margin_right = 88.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton6/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="itemButton8" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 588.0
+margin_right = 500.0
+margin_bottom = 668.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 20 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton8"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton8/GridContainer2"]
+margin_right = 57.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 13 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton8/GridContainer2"]
+margin_left = 61.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton8/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 331.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "$SHARE_ON_WHATSAPP"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton8/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 331.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton8/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 31.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "300"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton8/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 35.0
+margin_right = 99.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton8/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="itemButton9" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 672.0
+margin_right = 500.0
+margin_bottom = 752.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton9"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton9/GridContainer2"]
+margin_right = 57.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 14 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton9/GridContainer2"]
+margin_left = 61.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton9/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 331.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "$LIKE_ON_FACEBOOK"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton9/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 331.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton9/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 33.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "400"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton9/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 37.0
+margin_right = 101.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton9/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="itemButton10" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 756.0
+margin_right = 500.0
+margin_bottom = 836.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton10"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton10/GridContainer2"]
+margin_right = 57.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 16 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton10/GridContainer2"]
+margin_left = 61.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton10/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 331.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "$FOLLOW_US_ON_INSTAGRAM"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton10/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 331.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton10/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "500"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton10/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 36.0
+margin_right = 100.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton10/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="itemButton11" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 840.0
+margin_right = 500.0
+margin_bottom = 920.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton11"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton11/GridContainer2"]
+margin_right = 57.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 15 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton11/GridContainer2"]
+margin_left = 61.0
+margin_right = 392.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton11/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 331.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "$FOLLOW_US_ON_TIKTOK"
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton11/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 331.0
+margin_bottom = 64.0
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton11/GridContainer2/textContainer/HBoxContainer"]
+margin_right = 32.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "500"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="prece2" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton11/GridContainer2/textContainer/HBoxContainer"]
+margin_left = 36.0
+margin_right = 100.0
+margin_bottom = 21.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "$COINS"
+valign = 1
+__meta__ = {
+"_editor_description_": "gfhfghfh"
+}
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton11/GridContainer2"]
+margin_left = 396.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "$GET"
+
+[node name="Control3" type="Control" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 924.0
+margin_right = 500.0
+margin_bottom = 1004.0
+rect_min_size = Vector2( 0, 80 )
+mouse_filter = 1
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/Control3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 10 )
+text = "$SHOPPING"
+align = 1
+valign = 1
+
+[node name="itemButtonVib" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 1008.0
+margin_right = 500.0
+margin_bottom = 1308.0
+rect_min_size = Vector2( 150, 300 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_top = 20.0
+margin_right = -15.0
+margin_bottom = -20.0
+rect_clip_content = true
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2"]
+margin_right = 470.0
+margin_bottom = 49.0
+custom_fonts/font = SubResource( 12 )
+text = "CONVIERTETE EN 
+PREMIUN"
+align = 1
+valign = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2"]
+margin_top = 53.0
+margin_right = 470.0
+margin_bottom = 163.0
+alignment = 1
+
+[node name="Panel" type="Panel" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2/HBoxContainer"]
+margin_left = 83.0
+margin_right = 233.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 150, 110 )
+mouse_filter = 1
+custom_styles/panel = SubResource( 19 )
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2/HBoxContainer/Panel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -28.5
+margin_top = 15.0
+margin_right = 28.5
+margin_bottom = 57.0
+size_flags_vertical = 3
+texture = ExtResource( 5 )
+stretch_mode = 6
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2/HBoxContainer/Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = 20.0
+margin_right = 51.0
+margin_bottom = 10.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "50 Monedas"
+valign = 1
+
+[node name="Panel2" type="Panel" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2/HBoxContainer"]
+margin_left = 237.0
+margin_right = 387.0
+margin_bottom = 110.0
+rect_min_size = Vector2( 150, 110 )
+mouse_filter = 2
+custom_styles/panel = SubResource( 19 )
+
+[node name="Texture2" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2/HBoxContainer/Panel2"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_top = 15.0
+margin_right = 20.0
+margin_bottom = 57.0
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+stretch_mode = 6
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2/HBoxContainer/Panel2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -51.0
+margin_top = 20.0
+margin_right = 51.0
+margin_bottom = 15.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "Sin Anuncio"
+valign = 1
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2"]
+margin_top = 167.0
+margin_right = 470.0
+margin_bottom = 167.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="Control" type="Control" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2"]
+margin_top = 171.0
+margin_right = 470.0
+margin_bottom = 260.0
+size_flags_horizontal = 7
+size_flags_vertical = 3
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButtonVib/GridContainer2/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -93.5
+margin_top = -32.5
+margin_right = 93.5
+margin_bottom = 32.5
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "COMPRAR AHORA
+solo por 6,0 PER"
+align = 1
+valign = 1
+
+[node name="itemButton7" type="Button" parent="ScrollContainer/CenterContainer/VBoxContainer"]
+margin_top = 1312.0
+margin_right = 500.0
+margin_bottom = 1392.0
+rect_min_size = Vector2( 150, 80 )
+custom_styles/hover = SubResource( 16 )
+custom_styles/pressed = SubResource( 17 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 9 )
+
+[node name="GridContainer2" type="GridContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton7"]
+use_parent_material = true
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 15.0
+margin_right = -15.0
+rect_clip_content = true
+columns = 3
+
+[node name="Texture" type="TextureRect" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton7/GridContainer2"]
+margin_right = 40.0
+margin_bottom = 80.0
+size_flags_vertical = 3
+texture = ExtResource( 12 )
+stretch_mode = 6
+
+[node name="textContainer" type="VBoxContainer" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton7/GridContainer2"]
+margin_left = 44.0
+margin_right = 366.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 200, 0 )
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="gameName" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton7/GridContainer2/textContainer"]
+margin_top = 16.0
+margin_right = 322.0
+margin_bottom = 39.0
+custom_fonts/font = SubResource( 12 )
+text = "nombre del juego"
+valign = 1
+
+[node name="prece" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton7/GridContainer2/textContainer"]
+margin_top = 43.0
+margin_right = 322.0
+margin_bottom = 64.0
+custom_colors/font_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+custom_fonts/font = SubResource( 13 )
+text = "50 Monedas"
+valign = 1
+
+[node name="actionGet" type="Label" parent="ScrollContainer/CenterContainer/VBoxContainer/itemButton7/GridContainer2"]
+margin_left = 370.0
+margin_top = 19.0
+margin_right = 470.0
+margin_bottom = 60.0
+size_flags_horizontal = 9
+custom_fonts/font = SubResource( 14 )
+custom_styles/normal = SubResource( 15 )
+text = "Obtener"

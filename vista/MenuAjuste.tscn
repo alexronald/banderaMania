@@ -1,0 +1,143 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://font/Montserrat-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://recursos/on.png" type="Texture" id=2]
+[ext_resource path="res://recursos/off.png" type="Texture" id=3]
+[ext_resource path="res://recursos/time.png" type="Texture" id=4]
+[ext_resource path="res://script/MenuAjuste.gd" type="Script" id=5]
+[ext_resource path="res://recursos/Spanish.png" type="Texture" id=6]
+[ext_resource path="res://recursos/English.png" type="Texture" id=7]
+[ext_resource path="res://recursos/portugues.png" type="Texture" id=8]
+[ext_resource path="res://recursos/italiano.png" type="Texture" id=9]
+[ext_resource path="res://recursos/aleman.png" type="Texture" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+size = 26
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 25
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.215686, 0.235294, 0.313726, 1 )
+
+[sub_resource type="Theme" id=4]
+CheckButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+CheckButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
+CheckButton/colors/font_color_focus = Color( 0.94, 0.94, 0.94, 1 )
+CheckButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
+CheckButton/colors/font_color_hover_pressed = Color( 1, 1, 1, 1 )
+CheckButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
+CheckButton/fonts/font = null
+CheckButton/icons/off = null
+CheckButton/icons/off_disabled = null
+CheckButton/icons/on = null
+CheckButton/icons/on_disabled = null
+CheckButton/styles/disabled = null
+CheckButton/styles/focus = null
+CheckButton/styles/hover = null
+CheckButton/styles/hover_pressed = null
+CheckButton/styles/normal = null
+CheckButton/styles/pressed = null
+PopupMenu/constants/vseparation = 15
+PopupMenu/fonts/font = SubResource( 6 )
+PopupMenu/styles/panel = SubResource( 3 )
+PopupPanel/styles/panel = null
+
+[sub_resource type="DynamicFont" id=5]
+size = 35
+use_filter = true
+font_data = ExtResource( 1 )
+
+[node name="MenuAjuste" type="Control"]
+pause_mode = 2
+script = ExtResource( 5 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 455.0
+margin_bottom = 1212.0
+color = Color( 0.133333, 0.133333, 0.180392, 1 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 25.0
+margin_top = 50.0
+margin_right = 405.0
+margin_bottom = 491.0
+custom_constants/separation = 25
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_right = 380.0
+margin_bottom = 60.0
+
+[node name="btnAtras" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_right = 66.0
+margin_bottom = 60.0
+icon = ExtResource( 4 )
+flat = true
+
+[node name="titulo" type="Label" parent="VBoxContainer/HBoxContainer"]
+margin_left = 70.0
+margin_top = 13.0
+margin_right = 195.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 1 )
+text = "$AJUSTE"
+
+[node name="cbSonido" type="CheckButton" parent="VBoxContainer"]
+margin_top = 85.0
+margin_right = 380.0
+margin_bottom = 144.0
+custom_fonts/font = SubResource( 2 )
+custom_icons/off = ExtResource( 3 )
+custom_icons/on = ExtResource( 2 )
+text = "$SONIDO"
+
+[node name="cbMusica" type="CheckButton" parent="VBoxContainer"]
+margin_top = 169.0
+margin_right = 380.0
+margin_bottom = 228.0
+custom_fonts/font = SubResource( 2 )
+custom_icons/off = ExtResource( 3 )
+custom_icons/on = ExtResource( 2 )
+text = "$MUSICA"
+
+[node name="cbNotificacion" type="CheckButton" parent="VBoxContainer"]
+margin_top = 253.0
+margin_right = 380.0
+margin_bottom = 312.0
+custom_fonts/font = SubResource( 2 )
+custom_icons/off = ExtResource( 3 )
+custom_icons/on = ExtResource( 2 )
+text = "$NOTIFICACION"
+
+[node name="cbAnuncio" type="CheckButton" parent="VBoxContainer"]
+margin_top = 337.0
+margin_right = 380.0
+margin_bottom = 396.0
+custom_fonts/font = SubResource( 2 )
+custom_icons/off = ExtResource( 3 )
+custom_icons/on = ExtResource( 2 )
+text = "$ANUNCIO"
+
+[node name="obIdiona" type="OptionButton" parent="VBoxContainer"]
+margin_top = 421.0
+margin_right = 380.0
+margin_bottom = 497.0
+theme = SubResource( 4 )
+custom_fonts/font = SubResource( 5 )
+text = "Spanish"
+icon = ExtResource( 6 )
+flat = true
+align = 1
+items = [ "Spanish", ExtResource( 6 ), false, 0, null, "English", ExtResource( 7 ), false, 1, null, "Português", ExtResource( 8 ), false, 2, null, "Italiano", ExtResource( 9 ), false, 3, null, "Deutsch", ExtResource( 10 ), false, 4, null ]
+selected = 0
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/btnAtras" to="." method="_on_btnAtras_pressed"]

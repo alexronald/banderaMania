@@ -1,0 +1,119 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://font/Montserrat-Black.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://recursos/icon _setting.png" type="Texture" id=2]
+[ext_resource path="res://recursos/icon_coin.png" type="Texture" id=3]
+[ext_resource path="res://font/Montserrat-Bold.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://script/navBar.gd" type="Script" id=5]
+[ext_resource path="res://recursos/icon_atras.png" type="Texture" id=6]
+[ext_resource path="res://recursos/icon_start.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=4]
+size = 36
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 25
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 22
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="ShortCut" id=6]
+
+[sub_resource type="ButtonGroup" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 0.081
+margin_bottom = 0.230003
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 540.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 540, 90 )
+color = Color( 0.133333, 0.133333, 0.180392, 1 )
+
+[node name="container" type="HBoxContainer" parent="."]
+margin_right = 540.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 540, 95 )
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+custom_constants/separation = 34
+alignment = 1
+
+[node name="containe2" type="HBoxContainer" parent="container"]
+margin_left = 23.0
+margin_right = 141.0
+margin_bottom = 95.0
+
+[node name="Button" type="Button" parent="container/containe2"]
+margin_right = 46.0
+margin_bottom = 95.0
+custom_fonts/font = SubResource( 4 )
+icon = ExtResource( 6 )
+flat = true
+
+[node name="Titulo" type="Label" parent="container/containe2"]
+margin_left = 50.0
+margin_top = 31.0
+margin_right = 118.0
+margin_bottom = 63.0
+custom_fonts/font = SubResource( 5 )
+text = "Nivel"
+
+[node name="Container1" type="HBoxContainer" parent="container"]
+margin_left = 175.0
+margin_right = 517.0
+margin_bottom = 95.0
+custom_constants/separation = 0
+alignment = 1
+
+[node name="score" type="Button" parent="container/Container1"]
+margin_right = 135.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 135, 0 )
+custom_fonts/font = SubResource( 2 )
+text = "00"
+icon = ExtResource( 7 )
+flat = true
+
+[node name="coin" type="Button" parent="container/Container1"]
+margin_left = 135.0
+margin_right = 270.0
+margin_bottom = 95.0
+rect_min_size = Vector2( 135, 0 )
+focus_mode = 1
+custom_fonts/font = SubResource( 1 )
+enabled_focus_mode = 1
+keep_pressed_outside = true
+shortcut = SubResource( 6 )
+group = SubResource( 3 )
+text = "00"
+icon = ExtResource( 3 )
+flat = true
+
+[node name="Ajuste" type="Button" parent="container/Container1"]
+margin_left = 270.0
+margin_right = 342.0
+margin_bottom = 95.0
+icon = ExtResource( 2 )
+flat = true
+
+[connection signal="pressed" from="container/containe2/Button" to="." method="_on_Button_pressed"]

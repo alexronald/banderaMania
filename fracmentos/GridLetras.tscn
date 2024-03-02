@@ -1,0 +1,84 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fracmentos/Button.tscn" type="PackedScene" id=1]
+[ext_resource path="res://script/GridLetras.gd" type="Script" id=2]
+
+[node name="GridLetras" type="GridContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -222.5
+margin_top = -69.0
+margin_right = 222.5
+margin_bottom = 69.0
+custom_constants/vseparation = 3
+custom_constants/hseparation = 3
+columns = 7
+script = ExtResource( 2 )
+
+[node name="Button" parent="." groups=["botones"] instance=ExtResource( 1 )]
+
+[node name="Button2" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 64.0
+margin_right = 125.0
+
+[node name="Button3" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_right = 189.0
+
+[node name="Button4" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 192.0
+margin_right = 253.0
+
+[node name="Button5" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_right = 317.0
+
+[node name="Button6" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 320.0
+margin_right = 381.0
+
+[node name="Button7" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_right = 445.0
+
+[node name="Button8" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_top = 67.0
+margin_bottom = 131.0
+
+[node name="Button9" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 64.0
+margin_top = 67.0
+margin_right = 125.0
+margin_bottom = 131.0
+
+[node name="Button10" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 128.0
+margin_top = 67.0
+margin_right = 189.0
+margin_bottom = 131.0
+
+[node name="Button11" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 192.0
+margin_top = 67.0
+margin_right = 253.0
+margin_bottom = 131.0
+
+[node name="Button12" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 256.0
+margin_top = 67.0
+margin_right = 317.0
+margin_bottom = 131.0
+
+[node name="Button13" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 320.0
+margin_top = 67.0
+margin_right = 381.0
+margin_bottom = 131.0
+
+[node name="Button14" parent="." groups=["botones"] instance=ExtResource( 1 )]
+margin_left = 384.0
+margin_top = 67.0
+margin_right = 445.0
+margin_bottom = 131.0

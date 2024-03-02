@@ -1,0 +1,8 @@
+[gd_resource type="ImageTexture" format=2]
+
+[resource]
+resource_local_to_scene = true
+flags = 40
+lossy_quality = 1.0
+flags = 40
+size = Vector2( 56, 46 )

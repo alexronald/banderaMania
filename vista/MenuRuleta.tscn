@@ -1,0 +1,417 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://vista/navBar.tscn" type="PackedScene" id=1]
+[ext_resource path="res://script/MenuRuleta.gd" type="Script" id=2]
+[ext_resource path="res://recursos/btn_girar.png" type="Texture" id=3]
+[ext_resource path="res://recursos/marco_ruleta.png" type="Texture" id=4]
+[ext_resource path="res://recursos/ruleta.png" type="Texture" id=5]
+[ext_resource path="res://recursos/piso.png" type="Texture" id=6]
+[ext_resource path="res://recursos/clip_fondo.png" type="Texture" id=7]
+[ext_resource path="res://recursos/clip.png" type="Texture" id=8]
+[ext_resource path="res://recursos/fondo.png" type="Texture" id=9]
+[ext_resource path="res://font/Montserrat-Black.ttf" type="DynamicFontData" id=10]
+[ext_resource path="res://recursos/ad_video.png" type="Texture" id=11]
+[ext_resource path="res://font/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://recursos/pista.png" type="Texture" id=13]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 2.75003, 5.5 )
+
+[sub_resource type="DynamicFont" id=21]
+size = 20
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="DynamicFont" id=3]
+use_filter = true
+font_data = ExtResource( 10 )
+
+[sub_resource type="DynamicFont" id=22]
+size = 20
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="StyleBoxFlat" id=23]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.133333, 0.133333, 0.180392, 1 )
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+
+[sub_resource type="DynamicFont" id=24]
+font_data = ExtResource( 10 )
+
+[sub_resource type="StyleBoxFlat" id=19]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.133333, 0.133333, 0.180392, 0.6 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.215686, 0.235294, 0.313726, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=20]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.215686, 0.235294, 0.313726, 0.721569 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.133333, 0.133333, 0.180392, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=18]
+content_margin_left = 15.0
+content_margin_right = 15.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.133333, 0.133333, 0.180392, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.133333, 0.133333, 0.180392, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id=4]
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 5.0
+content_margin_bottom = 5.0
+bg_color = Color( 0.945098, 0.647059, 0.34902, 1 )
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="MenuRuleta" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Control" parent="." instance=ExtResource( 1 )]
+
+[node name="clip_marco" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.268
+anchor_right = 0.5
+anchor_bottom = 0.268
+margin_left = -56.0
+margin_top = -96.56
+margin_right = 56.0001
+margin_bottom = -44.56
+rect_rotation = -360.0
+texture = ExtResource( 7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="piso" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.768
+anchor_right = 0.5
+anchor_bottom = 0.768
+margin_left = -200.0
+margin_top = -224.56
+margin_right = 200.0
+margin_bottom = -95.56
+rect_rotation = -360.0
+texture = ExtResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="marco" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -229.5
+margin_top = -324.5
+margin_right = 229.5
+margin_bottom = 134.5
+rect_rotation = -360.0
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="ruleta" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -187.0
+margin_top = -282.0
+margin_right = 187.0
+margin_bottom = 92.0
+rect_rotation = 1224.2
+rect_pivot_offset = Vector2( 187, 187 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="4" type="Area2D" parent="ruleta"]
+position = Vector2( 190, 343 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruleta/4"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="3" type="Area2D" parent="ruleta"]
+position = Vector2( 300, 295 )
+rotation = -0.785398
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruleta/3"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="2" type="Area2D" parent="ruleta"]
+position = Vector2( 343, 184 )
+rotation = -1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruleta/2"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="1" type="Area2D" parent="ruleta"]
+position = Vector2( 295, 73 )
+rotation = -2.35619
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruleta/1"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="8" type="Area2D" parent="ruleta"]
+position = Vector2( 183, 30 )
+rotation = -3.14159
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruleta/8"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="7" type="Area2D" parent="ruleta"]
+position = Vector2( 73, 79 )
+rotation = -3.92699
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruleta/7"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="6" type="Area2D" parent="ruleta"]
+position = Vector2( 29.9999, 191 )
+rotation = -4.71239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruleta/6"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="5" type="Area2D" parent="ruleta"]
+position = Vector2( 79, 301 )
+rotation = -5.49779
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ruleta/5"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="clip" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.271
+anchor_right = 0.5
+anchor_bottom = 0.271
+margin_left = -44.0
+margin_top = -89.07
+margin_right = 44.0
+margin_bottom = 16.93
+rect_rotation = 360.0
+rect_pivot_offset = Vector2( 44.1662, 14.718 )
+texture = ExtResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="areaClip" type="Area2D" parent="clip"]
+position = Vector2( 44, 96 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="clip/areaClip"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="btnGirar" type="TextureButton" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -67.0
+margin_top = -162.0
+margin_right = 67.0
+margin_bottom = -28.0
+texture_normal = ExtResource( 3 )
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="btnGirar"]
+anchor_left = 0.134
+anchor_top = 0.5
+anchor_right = 0.866
+anchor_bottom = 0.5
+margin_left = 0.0439987
+margin_top = -13.0
+margin_right = -0.0440063
+margin_bottom = 13.0
+custom_fonts/font = SubResource( 21 )
+text = "Girar"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -45.0
+margin_top = -318.0
+margin_right = 45.0
+margin_bottom = -248.0
+rect_min_size = Vector2( 90, 70 )
+rect_clip_content = true
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Container" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+alignment = 1
+
+[node name="lblGiros" type="Label" parent="Panel/Container"]
+margin_top = 12.0
+margin_right = 90.0
+margin_bottom = 33.0
+custom_fonts/font = SubResource( 3 )
+text = "$GIROS:"
+align = 1
+
+[node name="lblCantiad" type="Label" parent="Panel/Container"]
+margin_top = 37.0
+margin_right = 90.0
+margin_bottom = 58.0
+custom_fonts/font = SubResource( 3 )
+text = "0"
+align = 1
+
+[node name="btnPremios" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.145
+anchor_right = 0.5
+anchor_bottom = 0.145
+margin_left = -77.0
+margin_top = -31.65
+margin_right = 77.0
+margin_bottom = 31.35
+mouse_filter = 2
+custom_fonts/font = SubResource( 22 )
+custom_styles/normal = SubResource( 23 )
+text = "$30"
+icon = ExtResource( 13 )
+clip_text = true
+icon_align = 2
+expand_icon = true
+
+[node name="btnGirar2" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.862
+anchor_right = 0.5
+anchor_bottom = 0.862
+margin_left = -110.0
+margin_top = -67.54
+margin_right = 110.0
+margin_bottom = -0.540039
+rect_min_size = Vector2( 220, 67 )
+custom_fonts/font = SubResource( 24 )
+custom_styles/hover = SubResource( 19 )
+custom_styles/pressed = SubResource( 20 )
+custom_styles/disabled = SubResource( 18 )
+custom_styles/normal = SubResource( 4 )
+text = "$GIRAR_GRATIS"
+icon = ExtResource( 11 )
+icon_align = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 9 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="TwenClip" type="Tween" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="area_entered" from="clip/areaClip" to="." method="_on_areaClip_area_entered"]
+[connection signal="pressed" from="btnGirar" to="." method="_on_btnGirar_pressed"]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

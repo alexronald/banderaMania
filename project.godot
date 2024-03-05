@@ -25,9 +25,9 @@ run/main_scene="res://vista/controladorVista.tscn"
 boot_splash/image="res://recursos/icon.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.901961, 0.901961, 0.901961, 1 )
-config/icon="res://recursos/icom.png"
+config/icon="res://recursos/icon.png"
 config/macos_native_icon="res://recursos/icon.png"
-config/windows_native_icon="res://recursos/icon_w.ico"
+config/windows_native_icon="res://recursos/icon.png"
 
 [autoload]
 

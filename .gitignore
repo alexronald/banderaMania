@@ -1,0 +1,13 @@
+# Ignorar archivos temporales y archivos generados por IDEs
+*.aab
+*.apk
+*.import
+.build_version
+
+# Ignorar todos los archivos dentro de logs/
+android/build/*
+.import/*
+# Pero no ignorar Android
+!AndroidManifest.xml
+!build.gradle
+!plugins/

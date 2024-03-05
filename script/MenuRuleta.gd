@@ -10,14 +10,19 @@ var Ruleta_girando = false
 var velosiad = 0.5;
 var rotacionInicial
 var rotacionFinal
-var cantGiros = 5
+var cantGiros = 0
+var premios = {1:"50",2:"100",3:"20",4:"300",5:"3 Giros",6:"500",7:"1000",8:"2000"}
+var premio = 3
+var texturPremioicon = {}
 var random = RandomNumberGenerator.new()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	cantGiros = _Datos.data["giros"]
+	cargarTextura();
 	lblCantidaGiro.text = str(cantGiros)
-	btnGirar2.connect("pressed",self,"_on_btnGirar_pressed")
+	btnGirar2.connect("pressed",self,"giroGratis")
 	pass # Replace with function body.
 
 func btnAtras():
@@ -31,13 +36,6 @@ func btnAtras():
 #func _process(delta):
 #	pass
 
-
-func _on_ruleta_area_entered(area):
-	
-
-	pass # Replace with function body.
-
-
 func _on_btnGirar_pressed():
 	
 	if !Ruleta_girando and cantGiros >= 1:
@@ -50,6 +48,8 @@ func _on_btnGirar_pressed():
 		Ruleta_girando = true
 		cantGiros -= 1;
 		lblCantidaGiro.text = str(cantGiros)
+	elif cantGiros >= 0:
+		print("ver ads")
 	else:
 		print("Girando")
 	pass 
@@ -58,25 +58,24 @@ func girarRuleta()->void:
 	tween.start()
 	
 
-
 func _on_areaClip_area_entered(area):
-	if (area.name == "7" or area.name == "2"or area.name == "4") and tween.playback_speed <= 0.1:
-		tween.playback_speed += 0.05
-		print("ingrmento")
+	iniciarPrimerAnimacio();
+	pass
 
+func iniciarPrimerAnimacio():
 	$TwenClip.interpolate_property($clip,"rect_rotation",360,330,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT_IN)
 	$TwenClip.start()
 	yield($TwenClip,"tween_all_completed")
-	$TwenClip.interpolate_property($clip,"rect_rotation",330,360,0.3,Tween.TRANS_LINEAR,Tween.EASE_OUT_IN)
+	iniciarSegundaAnimacio()
+	
+func iniciarSegundaAnimacio():
+	$TwenClip.interpolate_property($clip,"rect_rotation",330,360,0.2,Tween.TRANS_LINEAR,Tween.EASE_OUT_IN)
 	$TwenClip.start()
 	yield($TwenClip,"tween_all_completed")
 	$TwenClip.reset_all()
-	btnPremio.text = ( area.name)
-	pass # Replace with function body.
-
 
 func _on_Timer_timeout():
-	tween.playback_speed -= 0.1
+	tween.playback_speed -= 0.05
 	if tween.playback_speed <= 0:
 		Ruleta_girando = false
 		$clip/areaClip/CollisionShape2D.disabled = true
@@ -86,6 +85,7 @@ func _on_Timer_timeout():
 		get_ruleta_rotacion_actual()
 		obtenerPremio();
 		$Timer.stop()
+		cambiarEstadoBotnGirar()
 	pass # Replace with function body.
 
 func get_ruleta_rotacion_actual():
@@ -100,5 +100,45 @@ func get_velosiad_ramdom():
 	velosiad = random.randf_range(0.4,0.9);
 	
 func obtenerPremio():
-	
+	if premio != 5:
+		_Datos.data["coins"] = _Datos.data["coins"] + int(premios[premio])
+		_Datos.save_data()
+		$Control.actualizarbtnCoin(_Datos.data["coins"])
+		print("GANASTE ",int(premios[premio]))
+		
+	else:
+		_Datos.data["giros"] = _Datos.data["giros"] + 3
+		_Datos.save_data()
+		cantGiros = _Datos.data["giros"]
+		lblCantidaGiro.text = str(cantGiros)
+		print("giros ",int(premios[premio]))
+		
 	pass
+func giroGratis():
+	print("ver ad")
+	
+func cambiarEstadoBotnGirar():
+	
+	if cantGiros <= 0:
+		$btnGirar/Label.text = ""
+		BtnGirar.texture_normal = load("res://recursos/btn_girar_ad.png")
+#	else:
+#		$btnGirar/Label.text = "$SPIN"
+#		BtnGirar.texture_normal = load("res://recursos/btn_girar.png")
+func _on_areaClip2_area_entered(area):
+	btnPremio.text = premios[int(area.name)]
+	btnPremio.icon = texturPremioicon[area.name]
+	premio = int(area.name)
+	pass # Replace with function body.
+	
+func cargarTextura():
+	texturPremioicon["1"]=preload("res://recursos/icon/50.png")
+	texturPremioicon["2"]=preload("res://recursos/icon/100.png")
+	texturPremioicon["3"]=preload("res://recursos/icon/20.png")
+	texturPremioicon["4"]=preload("res://recursos/icon/300.png")
+	texturPremioicon["5"]=preload("res://recursos/icon/3giros.png")
+	texturPremioicon["6"]=preload("res://recursos/icon/500.png")
+	texturPremioicon["7"]=preload("res://recursos/icon/1000.png")
+	texturPremioicon["8"]=preload("res://recursos/icon/2000.png")
+
+

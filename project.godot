@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "PlayBilling",
+"language": "GDScript",
+"path": "res://PlayBilling-lib/playbilling.gd"
+} ]
+_global_script_class_icons={
+"PlayBilling": "res://PlayBilling-lib/icon.png"
+}
+
 [application]
 
 config/name="BanderaMania"
@@ -15,9 +25,9 @@ run/main_scene="res://vista/controladorVista.tscn"
 boot_splash/image="res://recursos/icon.png"
 boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.901961, 0.901961, 0.901961, 1 )
-config/icon="res://recursos/icon.png"
+config/icon="res://recursos/icom.png"
 config/macos_native_icon="res://recursos/icon.png"
-config/windows_native_icon="res://recursos/icon.png"
+config/windows_native_icon="res://recursos/icon_w.ico"
 
 [autoload]
 

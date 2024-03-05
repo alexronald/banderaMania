@@ -2,7 +2,7 @@ extends GridContainer
 
 
 var letras:String="abcdefghijklmnopqrstuvwxyz";
-var letrasElegidas:String;
+var letrasElegidas:String = "";
 var indexLetrasInfiltrados:Array;
 var indexLettrasCorrectas:Array;
 
@@ -27,7 +27,7 @@ func letrasAleatorioas()-> String:
 	return nuevasLetras;
 
 func revolverLettra()->String:
-	var letraRevolvido:String;
+	var letraRevolvido:String = "";
 	var indexLista:Array = range(letrasElegidas.length())
 	#var tamano = tr(VARIABLES_DATOS.lista[VARIABLES_DATOS.nivel]).length();
 	var tamano = tr(_Datos.lista[_Datos.nivel]).length();

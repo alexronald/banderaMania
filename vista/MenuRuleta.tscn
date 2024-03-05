@@ -12,7 +12,7 @@
 [ext_resource path="res://font/Montserrat-Black.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://recursos/ad_video.png" type="Texture" id=11]
 [ext_resource path="res://font/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=12]
-[ext_resource path="res://recursos/pista.png" type="Texture" id=13]
+[ext_resource path="res://recursos/icon/20.png" type="Texture" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 2.75003, 5.5 )
@@ -183,7 +183,7 @@ margin_left = -187.0
 margin_top = -282.0
 margin_right = 187.0
 margin_bottom = 92.0
-rect_rotation = 1224.2
+rect_rotation = 245.0
 rect_pivot_offset = Vector2( 187, 187 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -282,13 +282,28 @@ rect_rotation = 360.0
 rect_pivot_offset = Vector2( 44.1662, 14.718 )
 texture = ExtResource( 8 )
 __meta__ = {
+"_edit_group_": true,
 "_edit_lock_": true
 }
 
 [node name="areaClip" type="Area2D" parent="clip"]
 position = Vector2( 44, 96 )
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="clip/areaClip"]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="areaClip2" type="Area2D" parent="."]
+position = Vector2( 270, 324 )
+collision_layer = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="areaClip2"]
 shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -316,7 +331,7 @@ margin_top = -13.0
 margin_right = -0.0440063
 margin_bottom = 13.0
 custom_fonts/font = SubResource( 21 )
-text = "Girar"
+text = "$SPIN"
 align = 1
 valign = 1
 autowrap = true
@@ -347,7 +362,7 @@ margin_top = 12.0
 margin_right = 90.0
 margin_bottom = 33.0
 custom_fonts/font = SubResource( 3 )
-text = "$GIROS:"
+text = "$TURNS"
 align = 1
 
 [node name="lblCantiad" type="Label" parent="Panel/Container"]
@@ -360,21 +375,20 @@ align = 1
 
 [node name="btnPremios" type="Button" parent="."]
 anchor_left = 0.5
-anchor_top = 0.145
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.145
-margin_left = -77.0
-margin_top = -31.65
-margin_right = 77.0
-margin_bottom = 31.35
+anchor_bottom = 0.5
+margin_left = -93.5
+margin_top = -460.0
+margin_right = 93.5
+margin_bottom = -384.0
 mouse_filter = 2
 custom_fonts/font = SubResource( 22 )
 custom_styles/normal = SubResource( 23 )
-text = "$30"
+text = "20"
 icon = ExtResource( 13 )
 clip_text = true
 icon_align = 2
-expand_icon = true
 
 [node name="btnGirar2" type="Button" parent="."]
 anchor_left = 0.5
@@ -391,7 +405,7 @@ custom_styles/hover = SubResource( 19 )
 custom_styles/pressed = SubResource( 20 )
 custom_styles/disabled = SubResource( 18 )
 custom_styles/normal = SubResource( 4 )
-text = "$GIRAR_GRATIS"
+text = "$SPIN_FREE"
 icon = ExtResource( 11 )
 icon_align = 2
 
@@ -410,8 +424,8 @@ __meta__ = {
 [node name="TwenClip" type="Tween" parent="."]
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
 
 [connection signal="area_entered" from="clip/areaClip" to="." method="_on_areaClip_area_entered"]
+[connection signal="area_entered" from="areaClip2" to="." method="_on_areaClip2_area_entered"]
 [connection signal="pressed" from="btnGirar" to="." method="_on_btnGirar_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

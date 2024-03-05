@@ -18,6 +18,9 @@ func _ready():
 #		_AdMob.load_banner()
 #		_AdMob.show_banner();
 	pass
+#func _process(delta):
+#	print(Engine.get_frames_per_second())
+#	print(OS.get_static_memory_usage())
 
 func  cambiarMenuPricipal()->void:
 	add_child(menuPrincipal.instance())

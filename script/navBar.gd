@@ -59,14 +59,16 @@ func get_node_padre(nodo_padre):
 		"MenuJuego":
 			lblTitulo.text = str(_Datos.nivel+1);
 		"Resultado":
-			lblTitulo.text = "Resultado"
+			lblTitulo.text = ""
 		"viewStore":
 			btnCoin.disabled = true;
 			lblTitulo.text = "$STORE"
 		"MenuRuleta":
-			lblTitulo.text = "$GIRAR"
+			lblTitulo.text = "$SPIN"
 	pass
 	
 func _on_Button_pressed():
 	self.connect("sigBtnAtras",get_parent(),"btnAtras")
 	emit_signal("sigBtnAtras");
+func actualizarbtnCoin(newValorCoin):
+	btnCoin.text = str(newValorCoin).pad_zeros(4)

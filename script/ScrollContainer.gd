@@ -14,7 +14,7 @@ var tween : Tween
 var OSSize = OS.window_size
 
 func obtenerNewViewPort()->Rect2:
-	var rect2:Rect2;
+	var rect2:Rect2 = Rect2()
 	var resolucionH = rect_size.x/get_viewport_rect().size.y
 	var resolucionV = rect_size.y/get_viewport_rect().size.x
 	var newSizeX =  resolucionH * OSSize.y

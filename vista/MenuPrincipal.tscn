@@ -70,6 +70,7 @@ text = "$SpinRoulette"
 [node name="Control" parent="." instance=ExtResource( 5 )]
 
 [node name="Button" type="Button" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.777
 anchor_right = 0.5
@@ -81,6 +82,7 @@ margin_bottom = 54.91
 text = "no com"
 
 [node name="Button2" type="Button" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.777
 anchor_right = 0.5
@@ -92,6 +94,7 @@ margin_bottom = 55.91
 text = "subs"
 
 [node name="Button3" type="Button" parent="."]
+visible = false
 anchor_left = 0.5
 anchor_top = 0.777
 anchor_right = 0.5
@@ -103,6 +106,7 @@ margin_bottom = 54.91
 text = "consumible"
 
 [node name="msg" type="RichTextLabel" parent="."]
+visible = false
 margin_left = 88.0
 margin_top = 975.0
 margin_right = 472.0

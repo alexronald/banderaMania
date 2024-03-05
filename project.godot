@@ -27,7 +27,7 @@ boot_splash/fullsize=false
 boot_splash/bg_color=Color( 0.901961, 0.901961, 0.901961, 1 )
 config/icon="res://recursos/icon.png"
 config/macos_native_icon="res://recursos/icon.png"
-config/windows_native_icon="res://recursos/icon.png"
+config/windows_native_icon="res://recursos/icon_w.ico"
 
 [autoload]
 

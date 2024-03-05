@@ -2,7 +2,7 @@ extends TextureButton
 onready var number = $number;
 var miNivel=0;
 var btnNivel = 0;
-signal clkic()
+#signal clkic()
 func _ready()->void:
 	#btnNivel = int(name);
 	number.text = str(btnNivel+1);

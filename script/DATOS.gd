@@ -17,6 +17,7 @@ const PASS = "abc123"
 
 var is_loaded = false
 var data = {
+	"giros":5,
 	"nivel":0,
 	"coins":0,
 	"rango":0,

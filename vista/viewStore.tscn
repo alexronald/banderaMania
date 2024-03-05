@@ -232,14 +232,14 @@ margin_right = 550.0
 margin_bottom = 1060.0
 rect_min_size = Vector2( 550, 950 )
 size_flags_horizontal = 3
-scroll_vertical = 442
+scroll_vertical = 100
 script = ExtResource( 7 )
 delta_for_swipe = Vector2( 8, 8 )
 
 [node name="CenterContainer" type="CenterContainer" parent="ScrollContainer"]
-margin_top = -442.0
+margin_top = -100.0
 margin_right = 540.0
-margin_bottom = 950.0
+margin_bottom = 1292.0
 rect_min_size = Vector2( 540, 1150 )
 
 [node name="VBoxContainer" type="GridContainer" parent="ScrollContainer/CenterContainer"]

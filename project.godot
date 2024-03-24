@@ -10,11 +10,23 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node",
+"class": "AdMob",
+"language": "GDScript",
+"path": "res://admob-lib/admob.gd"
+}, {
+"base": "Node",
+"class": "AdsControl",
+"language": "GDScript",
+"path": "res://script/AdsControl.gd"
+}, {
+"base": "Node",
 "class": "PlayBilling",
 "language": "GDScript",
 "path": "res://PlayBilling-lib/playbilling.gd"
 } ]
 _global_script_class_icons={
+"AdMob": "res://admob-lib/icon.png",
+"AdsControl": "",
 "PlayBilling": "res://PlayBilling-lib/icon.png"
 }
 
@@ -32,6 +44,7 @@ config/windows_native_icon="res://recursos/icon_w.ico"
 [autoload]
 
 _Datos="*res://script/DATOS.gd"
+_AdMob="*res://Singleton/AdMob.tscn"
 
 [display]
 
@@ -53,6 +66,9 @@ pointing/emulate_touch_from_mouse=true
 
 translations=PoolStringArray( "res://recursos/lenguaje/traductor.en_US.translation", "res://recursos/lenguaje/traductor.es_ES.translation", "res://recursos/lenguaje/traductor.pt.translation" )
 locale_filter=[ 1, [ "de", "en_US", "es_ES", "it_IT", "pt" ] ]
+translation_remaps={
+"res://recursos/icono-432_p.png": PoolStringArray( "res://recursos/icono-432_p.png:es_ES" )
+}
 
 [physics]
 

@@ -10,13 +10,13 @@ var menuRuleta = preload("res://vista/MenuRuleta.tscn")
 
 func _ready():
 	cambiarMenuPricipal()
-#	_AdMob.load_banner()
-#	if _AdMob._admob_singleton == null:
-#		#print("actibarBaner")
-#		_AdMob.show_banner();
-#	else:
-#		_AdMob.load_banner()
-#		_AdMob.show_banner();
+	_AdMob.load_banner()
+	if _AdMob._admob_singleton == null:
+		#print("actibarBaner")
+		_AdMob.show_banner();
+	else:
+		_AdMob.load_banner()
+		_AdMob.show_banner();
 	pass
 #func _process(delta):
 #	print(Engine.get_frames_per_second())

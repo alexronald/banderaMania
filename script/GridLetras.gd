@@ -6,20 +6,19 @@ var letrasElegidas:String = "";
 var indexLetrasInfiltrados:Array;
 var indexLettrasCorrectas:Array;
 
-func _ready():
+func _ready()->void:
 	pass 
 	
 func starGame()->void:
-	#print("nivel"+str(VARIABLES_DATOS.nivel))
-	#letrasElegidas = tr(VARIABLES_DATOS.lista[VARIABLES_DATOS.nivel])#<---nivel
-	letrasElegidas = tr(_Datos.lista[_Datos.nivel])
+	letrasElegidas = sinSpacio()
+	print("elejidas   "+letrasElegidas)
 	letrasElegidas += letrasAleatorioas();
 	letrasAleatorioas()
 	
 func letrasAleatorioas()-> String:
 	var nuevasLetras:String;
 	var cantBotones = self.get_child_count();
-	for i in range(cantBotones-tr(_Datos.lista[_Datos.nivel]).length()):
+	for i in range(cantBotones-sinSpacio().length()):
 	#for i in range(12-_Datos.lista[_Datos.nivel].length()):
 		randomize();
 		var num = randi()%letras.length();
@@ -29,8 +28,7 @@ func letrasAleatorioas()-> String:
 func revolverLettra()->String:
 	var letraRevolvido:String = "";
 	var indexLista:Array = range(letrasElegidas.length())
-	#var tamano = tr(VARIABLES_DATOS.lista[VARIABLES_DATOS.nivel]).length();
-	var tamano = tr(_Datos.lista[_Datos.nivel]).length();
+	var tamano = sinSpacio().length();
 	print(tamano)
 	var i = 0;
 	for letra in range(letrasElegidas.length()):
@@ -58,4 +56,9 @@ func getIndexLettrasCorrectas()->Array:
 
 func setIndexLettrasCorrectas(newIndexLettrasCorrectas)->void:
 	indexLettrasCorrectas=newIndexLettrasCorrectas;
+	
+func sinSpacio()->String:
+	var spacios = tr(_Datos.lista[_Datos.nivel])
+	var modificarrespuesta = spacios.replace(" ","");
+	return modificarrespuesta
 	

@@ -19,6 +19,8 @@ var random = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	cargarAnuncios()
+	conectarNodos()
 	cantGiros = _Datos.data["giros"]
 	cargarTextura();
 	lblCantidaGiro.text = str(cantGiros)
@@ -28,6 +30,9 @@ func _ready():
 func btnAtras():
 	if get_parent().has_method("cambiarMenuPricipal"):
 		get_parent().cambiarMenuPricipal();
+		queue_free()
+	elif get_parent().has_method("volverDeMenuRuleta"):
+		get_parent().volverDeMenuRuleta()
 		queue_free()
 	else:
 		print(get_parent())
@@ -47,9 +52,11 @@ func _on_btnGirar_pressed():
 		tween.repeat = true
 		Ruleta_girando = true
 		cantGiros -= 1;
+		_Datos.data["giros"] = cantGiros
+		_Datos.save_data()
 		lblCantidaGiro.text = str(cantGiros)
 	elif cantGiros >= 0:
-		print("ver ads")
+		giroGratis()
 	else:
 		print("Girando")
 	pass 
@@ -115,6 +122,10 @@ func obtenerPremio():
 		
 	pass
 func giroGratis():
+	if _AdMob.is_rewarded_video_loaded():
+		_AdMob.show_rewarded_video()
+	else:
+		_AdMob.load_rewarded_video()
 	print("ver ad")
 	
 func cambiarEstadoBotnGirar():
@@ -130,7 +141,26 @@ func _on_areaClip2_area_entered(area):
 	btnPremio.icon = texturPremioicon[area.name]
 	premio = int(area.name)
 	pass # Replace with function body.
+
+func cargarAnuncios()->void:
+	#_AdMob.load_interstitial();
+	_AdMob.load_rewarded_video();
 	
+func conectarNodos()->void:
+	_AdMob.connect("interstitial_closed",self,"anunciocerrado");
+	_AdMob.connect("rewarded_video_closed",self,"videoAnuncioCerrado")
+	_AdMob.connect("rewarded_video_loaded",self,"mostrar")
+	_AdMob.connect("interstitial_failed_to_load",self,"errorCargarAnuncio")
+
+func videoAnuncioCerrado()->void:
+	cargarAnuncios()
+	_Datos.data["giros"] = _Datos.data["giros"]+1
+	_Datos.save_data()
+	cantGiros = _Datos.data["giros"]
+	lblCantidaGiro.text = str(cantGiros)
+	$btnGirar/Label.text = tr("$SPIN")
+	BtnGirar.texture_normal = load("res://recursos/btn_girar.png")
+
 func cargarTextura():
 	texturPremioicon["1"]=preload("res://recursos/icon/50.png")
 	texturPremioicon["2"]=preload("res://recursos/icon/100.png")

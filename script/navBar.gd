@@ -18,7 +18,9 @@ func _ready():
 	print(get_viewport_rect().size)
 	conectarSenales()
 	ControlarCoins();
-	btnCoin.text = str(_Datos.data["coins"]).pad_zeros(4)
+	btnCoin.text = str(_Datos.data["coins"]).pad_zeros(4);
+	btnScore.text = str(_Datos.data["score"]).pad_zeros(3);
+	
 	pass 
 
 func ControlarCoins()->void:
@@ -57,7 +59,7 @@ func get_node_padre(nodo_padre):
 			container2.visible = true
 			$container.alignment= HALIGN_CENTER
 		"MenuJuego":
-			lblTitulo.text = str(_Datos.nivel+1);
+			lblTitulo.text = str(_Datos.nivel);
 		"Resultado":
 			lblTitulo.text = ""
 		"viewStore":
@@ -70,5 +72,9 @@ func get_node_padre(nodo_padre):
 func _on_Button_pressed():
 	self.connect("sigBtnAtras",get_parent(),"btnAtras")
 	emit_signal("sigBtnAtras");
+
 func actualizarbtnCoin(newValorCoin):
 	btnCoin.text = str(newValorCoin).pad_zeros(4)
+	
+func actualizarTitulo(newTitulo):
+	lblTitulo.text = str(newTitulo);

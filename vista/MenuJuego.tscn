@@ -1,10 +1,10 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://vista/navBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/MenuJuego.gd" type="Script" id=2]
 [ext_resource path="res://recursos/fondo.png" type="Texture" id=3]
 [ext_resource path="res://fracmentos/GridLetras.tscn" type="PackedScene" id=4]
-[ext_resource path="res://recursos/cora.png" type="Texture" id=5]
+[ext_resource path="res://recursos/img/$ANGOLA.png" type="Texture" id=5]
 [ext_resource path="res://font/Montserrat-Black.ttf" type="DynamicFontData" id=6]
 [ext_resource path="res://vista/viewPista.tscn" type="PackedScene" id=7]
 [ext_resource path="res://font/Montserrat-Bold.ttf" type="DynamicFontData" id=8]
@@ -13,13 +13,16 @@
 [ext_resource path="res://recursos/estilos/btnComodi_theme.tres" type="Theme" id=11]
 [ext_resource path="res://recursos/ventana1.png" type="Texture" id=12]
 [ext_resource path="res://font/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=13]
+[ext_resource path="res://recursos/limpiar.png" type="Texture" id=14]
+[ext_resource path="res://recursos/girar_btn.png" type="Texture" id=15]
+[ext_resource path="res://recursos/moneda_gratis.png" type="Texture" id=16]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
 use_mipmaps = true
 font_data = ExtResource( 6 )
 
-[sub_resource type="StyleBoxFlat" id=3]
+[sub_resource type="StyleBoxFlat" id=8]
 content_margin_left = 30.0
 content_margin_right = 30.0
 content_margin_top = 10.0
@@ -30,10 +33,26 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=9]
+content_margin_left = 30.0
+content_margin_right = 30.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.945098, 0.647059, 0.34902, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id=4]
 content_margin_left = 30.0
@@ -45,11 +64,59 @@ border_width_left = 4
 border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
+border_color = Color( 0.952941, 0.454902, 0.192157, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=7]
+content_margin_left = 19.0
+content_margin_right = 19.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.945098, 0.647059, 0.34902, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
 border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 19.0
+content_margin_right = 19.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.945098, 0.647059, 0.34902, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id=6]
+content_margin_left = 19.0
+content_margin_right = 19.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="DynamicFont" id=2]
 size = 24
@@ -63,11 +130,8 @@ use_filter = true
 font_data = ExtResource( 13 )
 
 [node name="MenuJuego" type="CanvasLayer"]
+layer = -1
 script = ExtResource( 2 )
-
-[node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
@@ -85,46 +149,126 @@ margin_right = 420.0
 margin_bottom = 468.0
 rect_min_size = Vector2( 300, 300 )
 texture = ExtResource( 5 )
-stretch_mode = 1
+stretch_mode = 6
 
 [node name="respuesta" type="HBoxContainer" parent="."]
-margin_left = 5.0
-margin_top = 531.0
-margin_right = 45.0
-margin_bottom = 571.0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -270.0
+margin_top = -83.0
+margin_right = 270.0
+margin_bottom = -23.0
 rect_min_size = Vector2( 540, 60 )
+rect_clip_content = true
+size_flags_horizontal = 13
+size_flags_vertical = 7
 alignment = 1
 
-[node name="GridLetras" parent="." instance=ExtResource( 4 )]
-anchor_top = 0.657
-anchor_bottom = 0.657
-margin_top = -68.69
-margin_bottom = 69.31
+[node name="respuesta2" type="HBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -270.0
+margin_top = -30.0
+margin_right = 270.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 540, 60 )
+rect_clip_content = true
+size_flags_horizontal = 13
+size_flags_vertical = 7
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -222.5
+margin_top = 60.0
+margin_right = 222.5
+margin_bottom = 279.0
+custom_constants/separation = 10
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="GridLetras" parent="VBoxContainer" instance=ExtResource( 4 )]
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 0.0
+margin_top = 0.0
+margin_right = 445.0
+margin_bottom = 131.0
 __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="Tween" type="Tween" parent="."]
-pause_mode = 2
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 141.0
+margin_right = 445.0
+margin_bottom = 225.0
+alignment = 1
 
-[node name="btnPista" type="Button" parent="."]
-anchor_left = 0.288
-anchor_top = 0.762
-anchor_right = 0.288
-anchor_bottom = 0.762
-margin_left = -89.52
-margin_top = -42.54
-margin_right = 89.48
-margin_bottom = 41.46
+[node name="btnPista" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 2.0
+margin_right = 181.0
+margin_bottom = 84.0
 custom_fonts/font = SubResource( 1 )
-custom_styles/hover = SubResource( 3 )
-custom_styles/pressed = SubResource( 3 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
 custom_styles/normal = SubResource( 4 )
 text = "Pista"
 icon = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
+
+[node name="btnlimpiar" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 185.0
+margin_right = 268.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
+icon = ExtResource( 14 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="btngirar" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 272.0
+margin_right = 355.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
+icon = ExtResource( 15 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="btnMonedas" type="Button" parent="VBoxContainer/HBoxContainer"]
+margin_left = 359.0
+margin_right = 442.0
+margin_bottom = 84.0
+custom_fonts/font = SubResource( 1 )
+custom_styles/hover = SubResource( 7 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/normal = SubResource( 6 )
+icon = ExtResource( 16 )
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Tween" type="Tween" parent="."]
+pause_mode = 2
 
 [node name="viewPista" parent="." instance=ExtResource( 7 )]
 pause_mode = 2
@@ -238,5 +382,9 @@ text = "120"
 align = 1
 autowrap = true
 
-[editable path="GridLetras"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/btnlimpiar" to="." method="_on_btnlimpiar_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/btngirar" to="." method="_on_btngirar_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/btnMonedas" to="." method="_on_btnMonedas_pressed"]
+
+[editable path="VBoxContainer/GridLetras"]
 [editable path="viewPista"]

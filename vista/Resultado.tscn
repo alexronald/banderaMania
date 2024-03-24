@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://vista/navBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://script/Resultado.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://font/Montserrat-Black.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://recursos/fondo.png" type="Texture" id=5]
 [ext_resource path="res://recursos/quiz.png" type="Texture" id=6]
+[ext_resource path="res://recursos/luz.png" type="Texture" id=7]
+[ext_resource path="res://font/Montserrat-ExtraBold.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -13,11 +15,17 @@ use_mipmaps = true
 use_filter = true
 font_data = ExtResource( 3 )
 
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.980392, 0.729412, 0.141176, 1 )
+corner_radius_top_left = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="StyleBoxFlat" id=6]
-bg_color = Color( 0.980392, 0.729412, 0.141176, 1 )
+bg_color = Color( 0.427451, 0.0784314, 0.0862745, 1 )
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [sub_resource type="DynamicFont" id=2]
 size = 50
@@ -57,8 +65,26 @@ corner_radius_top_right = 20
 corner_radius_bottom_right = 20
 corner_radius_bottom_left = 20
 
+[sub_resource type="DynamicFont" id=9]
+size = 22
+use_filter = true
+font_data = ExtResource( 8 )
+
 [node name="Resultado" type="CanvasLayer"]
 script = ExtResource( 2 )
+
+[node name="luz" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -275.0
+margin_top = -364.0
+margin_right = 275.0
+margin_bottom = 186.0
+rect_rotation = -360.0
+rect_pivot_offset = Vector2( 275, 275 )
+texture = ExtResource( 7 )
 
 [node name="Control" parent="." instance=ExtResource( 1 )]
 
@@ -80,7 +106,7 @@ margin_right = 225.0
 margin_bottom = 21.97
 rect_min_size = Vector2( 450, 45 )
 custom_fonts/font = SubResource( 1 )
-custom_styles/fg = SubResource( 5 )
+custom_styles/fg = SubResource( 8 )
 custom_styles/bg = SubResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -91,13 +117,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -136.5
+margin_left = -155.5
 margin_top = -31.0
-margin_right = 136.5
+margin_right = 155.5
 margin_bottom = 31.0
 custom_colors/font_color = Color( 0.901961, 0.905882, 0.909804, 1 )
 custom_fonts/font = SubResource( 2 )
-text = "Resultado"
+text = "Bien Hecho"
 
 [node name="Siguinte" type="Button" parent="."]
 anchor_left = 0.5
@@ -130,5 +156,23 @@ expand = true
 wait_time = 0.1
 autostart = true
 
+[node name="tweengiraluz" type="Tween" parent="."]
+playback_speed = 0.5
+playback/speed = 0.5
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 0.704
+anchor_right = 0.5
+anchor_bottom = 0.704
+margin_left = -113.0
+margin_top = -16.6801
+margin_right = 113.0
+margin_bottom = 17.3199
+custom_fonts/font = SubResource( 9 )
+text = "No solo continuar "
+flat = true
+
 [connection signal="pressed" from="Siguinte" to="." method="_on_Siguinte_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="tween_completed" from="tweengiraluz" to="." method="_on_tweengiraluz_tween_completed"]

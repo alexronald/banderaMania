@@ -29,6 +29,7 @@ func ControlarCoins()->void:
 		_Datos.save_data();
 
 func cambiarCoins():
+	btnCoin.text = str(_Datos.data["coins"]).pad_zeros(4)
 	print("señalresivida")
 	pass
 func onBtnCoinStore():

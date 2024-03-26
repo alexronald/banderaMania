@@ -137,7 +137,7 @@ text = "Spanish"
 icon = ExtResource( 6 )
 flat = true
 align = 1
-items = [ "Spanish", ExtResource( 6 ), false, 0, null, "English", ExtResource( 7 ), false, 1, null, "Português", ExtResource( 8 ), false, 2, null, "Italiano", ExtResource( 9 ), false, 3, null, "Deutsch", ExtResource( 10 ), false, 4, null ]
+items = [ "Spanish", ExtResource( 6 ), false, 0, null, "English", ExtResource( 7 ), false, 1, null, "Português", ExtResource( 8 ), false, 2, null, "Italiano", ExtResource( 9 ), true, 3, null, "Deutsch", ExtResource( 10 ), true, 4, null ]
 selected = 0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/btnAtras" to="." method="_on_btnAtras_pressed"]

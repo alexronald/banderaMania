@@ -56,7 +56,7 @@ var lista:Array=[
 	"$GUINEAECUATORIAL",
 	"$REPUBLICACENTROAFRICANA",
 	"$REPUBLICADELCONGO",
-	"$REPUBLICADEMOCRATICADELCONGO",
+	#"$REPUBLICADEMOCRATICADELCONGO",
 	"$SAHARAOCCIDENTAL",
 	"$SANTOTOMEYPRINCIPE",
 ];
@@ -77,13 +77,15 @@ var data = {
 	"rango":10,
 	"score":0,
 	"desbloqueados":[],
+	"store":[],
 	"eliminarOpc":0,
 	"tiempo":0,
 	"Sonido":1,
 	"Musica":1,
 	"Notificacion":1,
 	"Anuncio":1,
-	"Lenguaje":0
+	"Lenguaje":0,
+	"juegoCompleto":false
 }
 
 func _ready():

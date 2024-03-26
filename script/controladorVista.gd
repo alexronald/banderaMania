@@ -1,5 +1,5 @@
 extends Node2D
-
+var adsControl:AdsControl = AdsControl.new()
 
 # Lista de viastas
 var menuPrincipal = preload("res://vista/MenuPrincipal.tscn")
@@ -17,6 +17,8 @@ func _ready():
 	else:
 		_AdMob.load_banner()
 		_AdMob.show_banner();
+		
+	adsControl.cargarMostraInterstitialAds();
 	pass
 #func _process(delta):
 #	print(Engine.get_frames_per_second())
@@ -30,7 +32,16 @@ func cambiarMenuJuego()->void:
 	if get_tree().paused:
 		get_tree().paused = !get_tree().paused
 	add_child(menuJugar.instance())
-
+	
+#func recrearMenuJuego(idNivel):
+#	var controladorVista = get_tree().get_root().get_node("controladorVista")
+#	_Datos.nivel = int(idNivel);
+#	_Datos.mensajebtn=true
+#	controladorVista.get_child(0).queue_free()
+#	if get_tree().paused:
+#		get_tree().paused = !get_tree().paused
+#	add_child(menuJugar.instance())
+	
 func cambiarMenuNiveles()->void:
 	if get_tree().paused:
 		print("pause")
@@ -42,11 +53,15 @@ func cambiarMenuResultado()->void:
 		print("pause")
 		get_tree().paused = !get_tree().paused
 	add_child(menuResultado.instance())
+	randomize()
+	if (randi()%21) % 2:
+		adsControl.cargarMostraInterstitialAds()
 
 func cambiarMenuRuleta()->void:
 	if get_tree().paused:
 		print("pause")
 		get_tree().paused = !get_tree().paused
 	add_child(menuRuleta.instance())
+	adsControl.cargarMostraInterstitialAds()
 
 

@@ -1,7 +1,11 @@
 extends CanvasLayer
+var adscontrol:AdsControl=AdsControl.new()
 onready var textCoins=$Control/container/Container1/coin
 onready var textScore=$Control/container/Container1/score
 onready var progress = $ProgressBar
+onready var btnSigiente=$Siguinte
+onready var btnNoContinuar=$noContinuar
+onready var txtResultad=$TextResultado
 #onready var coins = $coinImage/CPUParticles2D;
 #onready var tween = $Tween;
 #onready var animetor = $animador;
@@ -9,11 +13,14 @@ var incremento= _Datos.recompensa;
 
 
 func _ready():
+	_AdMob.load_rewarded_video()
+	cambiarStilo(0)
 	progresBar();
 	iniciarGiro()
 	guardarDatos();
 	progresBar();
 	darRecompensa();
+	
 	
 	pass
 func progresBar()->void:
@@ -57,9 +64,20 @@ func guardarDatos()->void:
 func darRecompensa():
 	_Datos.data["coins"]= _Datos.data["coins"]+incremento;
 	_Datos.data["score"]= _Datos.data["score"]+_Datos.escore;
+	if _Datos.data["score"] >= _Datos.data["rango"]:
+		cambiarStilo(1)
+		_Datos.data["rango"] += 10
 	_Datos.save_data()
 	actualizarNodo()	
 	_Datos.reniciarVariables()
+	
+func darRecompensaBonus():
+	$Timer.start()
+	_Datos.data["coins"]= _Datos.data["coins"]+20;
+	_Datos.save_data()
+	_on_Siguinte_pressed()
+	actualizarNodo()	
+
 	
 func actualizarNodo():
 	textScore.text = str(_Datos.data["score"]).pad_zeros(3);
@@ -73,16 +91,25 @@ func btnAtras():
 
 
 func _on_Siguinte_pressed():
-	if get_parent().has_method("cambiarMenuJuego"):
-		_Datos.mensajebtn=false
-		get_parent().cambiarMenuJuego();
-		queue_free()
+	if !btnNoContinuar.visible:
+		if get_parent().has_method("cambiarMenuJuego"):
+			_Datos.mensajebtn=false
+			get_parent().cambiarMenuJuego();
+			queue_free()
+		else:
+			print(get_parent())
+			print("ERROR NO SE ENCUENTRO EL METHODO")
 	else:
-		print(get_parent())
-		print("ERROR NO SE ENCUENTRO EL METHODO")
+		_AdMob.connect("rewarded_video_closed",self,"videoAnuncioCerrado")
+		adscontrol.cargarMostraVideoAds()
+		print("dar_recoppesba")
 	pass # Replace with function body.
 
-
+func videoAnuncioCerrado():
+	darRecompensaBonus()
+	btnSigiente.text = tr("$NEXT")
+	btnNoContinuar.visible=false
+	
 func _on_Timer_timeout():
 	var coinsActual = _Datos.data["coins"]
 	var coins = int(textCoins.text)
@@ -101,4 +128,35 @@ func iniciarGiro():
 
 func _on_tweengiraluz_tween_completed(object, key):
 	iniciarGiro()
+	pass 
+
+func  cambiarStilo(idEstilo)->void:
+	print(estilos[idEstilo]["btnSigienteVisible"])
+	btnSigiente.visible=estilos[idEstilo]["btnSigienteVisible"]
+	btnSigiente.text = tr(estilos[idEstilo]["btnSigienteText"])
+	txtResultad.text= tr(estilos[idEstilo]["textrResultad"])
+	btnNoContinuar.visible=estilos[idEstilo]["btnNoContinuarVisible"]
+	
+	pass
+
+var estilos:Array=[
+	{
+		"btnSigienteVisible":true,
+		"btnSigienteText":"$NEXT",
+		"textrResultad":"$WELL_DONE",
+		"btnNoContinuarVisible":false
+	},
+	{
+		"btnSigienteVisible":true,
+		"btnSigienteText":"$VIEW_AD",
+		"textrResultad":"$CONGRATULATIONS",
+		"btnNoContinuarVisible":true
+	}
+]
+	
+func _on_noContinuar_pressed():
+	if get_parent().has_method("cambiarMenuJuego"):
+		_Datos.mensajebtn=false
+		get_parent().cambiarMenuJuego();
+		queue_free()
 	pass # Replace with function body.

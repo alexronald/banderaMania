@@ -59,8 +59,8 @@ custom_constants/separation = 34
 alignment = 1
 
 [node name="containe2" type="HBoxContainer" parent="container"]
-margin_left = 23.0
-margin_right = 141.0
+margin_left = 7.0
+margin_right = 157.0
 margin_bottom = 95.0
 
 [node name="Button" type="Button" parent="container/containe2"]
@@ -73,14 +73,14 @@ flat = true
 [node name="Titulo" type="Label" parent="container/containe2"]
 margin_left = 50.0
 margin_top = 31.0
-margin_right = 118.0
+margin_right = 150.0
 margin_bottom = 63.0
 custom_fonts/font = SubResource( 5 )
-text = "Nivel"
+text = "$LEVEL"
 
 [node name="Container1" type="HBoxContainer" parent="container"]
-margin_left = 175.0
-margin_right = 517.0
+margin_left = 191.0
+margin_right = 533.0
 margin_bottom = 95.0
 custom_constants/separation = 0
 alignment = 1

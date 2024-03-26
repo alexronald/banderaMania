@@ -56,14 +56,22 @@ var lista:Array=[
 	"$GUINEAECUATORIAL",
 	"$REPUBLICACENTROAFRICANA",
 	"$REPUBLICADELCONGO",
+<<<<<<< HEAD
 	"$REPUBLICADEMOCRATICADELCONGO",
+=======
+	#"$REPUBLICADEMOCRATICADELCONGO",
+>>>>>>> main_b
 	"$SAHARAOCCIDENTAL",
 	"$SANTOTOMEYPRINCIPE",
 ];
 
 var nivel = 0;
 var recompensa=20;
+<<<<<<< HEAD
 var escore = 1;
+=======
+var escore = 3;
+>>>>>>> main_b
 var mensajebtn = false;
 
 const PATH = "user://data.dat"
@@ -77,13 +85,18 @@ var data = {
 	"rango":10,
 	"score":0,
 	"desbloqueados":[],
+<<<<<<< HEAD
+=======
+	"store":[],
+>>>>>>> main_b
 	"eliminarOpc":0,
 	"tiempo":0,
 	"Sonido":1,
 	"Musica":1,
 	"Notificacion":1,
 	"Anuncio":1,
-	"Lenguaje":0
+	"Lenguaje":0,
+	"juegoCompleto":false
 }
 
 func _ready():
@@ -115,7 +128,11 @@ func load_data():
 	
 func reniciarVariables():
 	recompensa = 20
+<<<<<<< HEAD
 	escore=1
+=======
+	escore=3
+>>>>>>> main_b
 
 func cambiarIdioma():
 	match data["Lenguaje"]:

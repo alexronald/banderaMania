@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://font/Montserrat-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://recursos/fondo.png" type="Texture" id=2]
@@ -151,8 +151,18 @@ corner_radius_top_right = 15
 corner_radius_bottom_right = 15
 corner_radius_bottom_left = 15
 
+[sub_resource type="StyleBoxFlat" id=21]
+bg_color = Color( 0.133333, 0.133333, 0.180392, 0.6 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
 [node name="viewStore" type="Control"]
 pause_mode = 2
+margin_right = 540.0
+margin_bottom = 1170.0
+rect_min_size = Vector2( 540, 0 )
 script = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -1214,6 +1224,27 @@ custom_fonts/font = SubResource( 14 )
 custom_styles/normal = SubResource( 15 )
 text = "Obtener"
 
+<<<<<<< HEAD
+=======
+[node name="Label" type="Label" parent="."]
+visible = false
+modulate = Color( 1, 1, 1, 0 )
+anchor_left = 0.5
+anchor_top = 0.918
+anchor_right = 0.5
+anchor_bottom = 0.918
+margin_left = -177.0
+margin_top = -27.0601
+margin_right = 177.0
+margin_bottom = 25.9399
+custom_styles/normal = SubResource( 21 )
+text = "$REWARD_ALREADY_DELIVERED"
+align = 1
+valign = 1
+
+[node name="toasTween" type="Tween" parent="Label"]
+
+>>>>>>> main_b
 [connection signal="pressed" from="ScrollContainer/CenterContainer/VBoxContainer/itemQuizEnglish" to="." method="_on_itemQuizEnglish_pressed"]
 [connection signal="pressed" from="ScrollContainer/CenterContainer/VBoxContainer/itemQuizQuimica" to="." method="_on_itemQuizQuimica_pressed"]
 [connection signal="pressed" from="ScrollContainer/CenterContainer/VBoxContainer/itemFlying" to="." method="_on_itemFlying_pressed"]

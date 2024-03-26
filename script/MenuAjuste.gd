@@ -1,9 +1,14 @@
 extends Control
 var presed
 var tween = Tween.new();
-signal cambioEstado();
+var idioma;
+
+signal cambioEstado;
 
 func _ready():
+	idioma = _Datos.data["Lenguaje"]
+	var nodoPadre = get_parent()
+	connect("cambioEstado",nodoPadre,"reCrear")
 	posicionInicial()
 	$VBoxContainer/cbMusica.pressed = _Datos.data["Musica"]
 	$VBoxContainer/cbNotificacion.pressed = _Datos.data["Notificacion"]
@@ -25,8 +30,9 @@ func _on_btnAtras_pressed():
 	tween.interpolate_property(self,"rect_position",Vector2(210,0),Vector2(600,0),1,1,1)
 	tween.start()
 	guardarAjuste()
-	emit_signal("cambioEstado")
 	yield(tween,"tween_completed")
+	if idioma != $VBoxContainer/obIdiona.selected and get_parent().has_method("reCrear"):
+		emit_signal("cambioEstado")
 	queue_free()
 	pass # Replace with function body.
 func guardarAjuste()->void:

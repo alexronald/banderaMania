@@ -25,3 +25,15 @@ func recompensaVideoAds()->String:
 		recopensa = false
 	return newCoin
 	pass
+<<<<<<< HEAD
+=======
+
+func cargarMostraInterstitialAds():
+	recopensa = true
+	if _AdMob.is_interstitial_loaded():
+		_AdMob.show_interstitial()
+	else:
+		_AdMob.load_interstitial()
+		_AdMob.show_interstitial()
+	pass 
+>>>>>>> main_b

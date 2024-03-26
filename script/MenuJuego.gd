@@ -37,10 +37,17 @@ func btnAtras():
 	else:
 		print(get_parent())
 		print("ERROR NO SE ENCUENTRO EL METHODO")
+<<<<<<< HEAD
+=======
+		
+func reCrear():
+	btnAtras()
+>>>>>>> main_b
 
 func _ready():
 	_AdMob.load_rewarded_video()
 	conectarSIgnal()
+<<<<<<< HEAD
 	#add_child(textNivel)
 	#print("nivel es ",nivel);
 	
@@ -51,14 +58,27 @@ func _ready():
 	else:
 		GridBtn.starGame();
 		#_Datos.mensajebtn = false;
+=======
+	
+	if !_Datos.mensajebtn:
+		print("mensage",_Datos.mensajebtn)
+		setNivel()
+		GridBtn.starGame();
+	else:
+		GridBtn.starGame();
+>>>>>>> main_b
 	if sinSpacio().length() > 14:
 		print("AUMENTAR LETRAS")
 		var amentarletra = sinSpacio().length()-14
 		for i in range(14,sinSpacio().length()):
 			GridBtn.add_child(btnletra.instance())
+<<<<<<< HEAD
 		print(amentarletra)
 	#_Datos.nivel = 1
 	#textNivel.text = str(_Datos.nivel+1);
+=======
+		
+>>>>>>> main_b
 	respuetas = tr(_Datos.lista[_Datos.nivel])
 	botones = get_tree().get_nodes_in_group("botones");
 	conectar();
@@ -142,6 +162,7 @@ func instanciar(fila, texto)->void:
 				else:
 					$respuesta2.add_child(testura.instance());
 					resultado += str(0)
+<<<<<<< HEAD
 #	for i in respuetas.length():
 #		if i <= 8:
 #			if respuetas[i] == " ":
@@ -161,6 +182,8 @@ func instanciar(fila, texto)->void:
 #				resultado += str(0)
 #
 #	respuetas = modificarrespuesta
+=======
+>>>>>>> main_b
 
 func separaEnFilas():
 	var texto = tr(_Datos.lista[_Datos.nivel])
@@ -184,8 +207,11 @@ func separaEnFilas():
 	print(fila1,fila2)
 	var longitud = texto.length()
 	print("PALBRAS ",palabras )
+<<<<<<< HEAD
 	print("FILA1 ",fila1)
 	print("FILA2 ",fila2)
+=======
+>>>>>>> main_b
 
 func sinSpacio()->String:
 	var spacios = tr(_Datos.lista[_Datos.nivel])
@@ -274,9 +300,12 @@ pass
 
 func comprobarResultado()->void:
 	if resultado == sinSpacio():
+<<<<<<< HEAD
 #		if _Datos.nivel <= _Datos.data["nivel"]:
 #				_Datos.data["nivel"] +=1;
 #				_Datos.save_data();
+=======
+>>>>>>> main_b
 		efectoletras("ffffff","#92ff7c")
 		yield(tween,"tween_all_completed");
 		efectoletras("#92ff7c","#92ff7c")
@@ -342,6 +371,7 @@ func limpiarNoDisable()->void:
 
 func setNivel()->void:
 	var nivelDesbloqueado:Array = _Datos.data["desbloqueados"];
+<<<<<<< HEAD
 	for i in range(0,_Datos.lista.size()):
 		if nivelDesbloqueado.find(i) != -1:
 			if i == _Datos.lista.size():
@@ -353,13 +383,50 @@ func setNivel()->void:
 			break
 			print("nive bloqueado")
 		print(i)
+=======
+	if !_Datos.data["juegoCompleto"]:
+		for i in range(_Datos.nivel,_Datos.lista.size()):
+			if nivelDesbloqueado.find(i) != -1:
+				if nivelDesbloqueado.size() == _Datos.lista.size():
+					_Datos.data["juegoCompleto"]=true
+					_Datos.save_data()
+					_Datos.nivel = nivelDesbloqueado[_Datos.nivel]
+					print("compltaste el juego")
+				else:
+#					if !_Datos.data["juegoCompleto"] and i == _Datos.lista.size() :
+					i = 0
+					while nivelDesbloqueado.find(i) != -1:
+						print("CUIDADO ESTO BUSCA NIVEL")
+						i+=1
+					_Datos.nivel=i
+					navbar.actualizarTitulo(_Datos.nivel)
+					
+			else:
+				_Datos.nivel=i
+				navbar.actualizarTitulo(_Datos.nivel)
+				break
+	else:
+		_Datos.nivel += 1
+		if _Datos.nivel < _Datos.lista.size():
+			_Datos.data["nivel"] = _Datos.nivel
+			_Datos.save_data();
+		else:
+			_Datos.nivel = 0;
+			_Datos.data["nivel"]=0;
+			_Datos.save_data();
+		navbar.actualizarTitulo(_Datos.nivel)
+>>>>>>> main_b
 #	if _Datos.nivel < _Datos.lista.size():
 #		_Datos.nivel = _Datos.data["nivel"];
 #	else:
 #		_Datos.nivel = 0;
 #		_Datos.data["nivel"]=0;
 #		_Datos.save_data();
+<<<<<<< HEAD
 	GridBtn.starGame();
+=======
+	#GridBtn.starGame();
+>>>>>>> main_b
 
 
 #func _on_cerrar_pressed():

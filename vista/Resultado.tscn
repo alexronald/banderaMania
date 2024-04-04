@@ -117,23 +117,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-<<<<<<< HEAD
-margin_left = -155.5
+margin_left = -270.0
 margin_top = -31.0
-margin_right = 155.5
-=======
-margin_left = -269.0
-margin_top = -31.0
-margin_right = 271.0
->>>>>>> main_b
+margin_right = 270.0
 margin_bottom = 31.0
 custom_colors/font_color = Color( 0.901961, 0.905882, 0.909804, 1 )
 custom_fonts/font = SubResource( 2 )
 text = "Bien Hecho"
-<<<<<<< HEAD
-=======
 align = 1
->>>>>>> main_b
 
 [node name="Siguinte" type="Button" parent="."]
 anchor_left = 0.5
@@ -171,36 +162,20 @@ autostart = true
 playback_speed = 0.5
 playback/speed = 0.5
 
-<<<<<<< HEAD
-[node name="Button" type="Button" parent="."]
-=======
 [node name="noContinuar" type="Button" parent="."]
->>>>>>> main_b
 anchor_left = 0.5
 anchor_top = 0.704
 anchor_right = 0.5
 anchor_bottom = 0.704
-<<<<<<< HEAD
-margin_left = -113.0
-margin_top = -16.6801
-margin_right = 113.0
-margin_bottom = 17.3199
+margin_left = -159.0
+margin_top = -16.68
+margin_right = 159.0
+margin_bottom = 17.32
 custom_fonts/font = SubResource( 9 )
 text = "No solo continuar "
-=======
-margin_left = -147.0
-margin_top = -16.6801
-margin_right = 147.0
-margin_bottom = 17.3199
-custom_fonts/font = SubResource( 9 )
-text = "$NOT_ONLY_CONTINUE"
->>>>>>> main_b
 flat = true
 
 [connection signal="pressed" from="Siguinte" to="." method="_on_Siguinte_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="tween_completed" from="tweengiraluz" to="." method="_on_tweengiraluz_tween_completed"]
-<<<<<<< HEAD
-=======
 [connection signal="pressed" from="noContinuar" to="." method="_on_noContinuar_pressed"]
->>>>>>> main_b

@@ -21,10 +21,6 @@ func _ready():
 	progresBar();
 	darRecompensa();
 	
-<<<<<<< HEAD
-=======
-	
->>>>>>> main_b
 	pass
 func progresBar()->void:
 	progress.max_value = _Datos.lista.size();
@@ -67,18 +63,14 @@ func guardarDatos()->void:
 func darRecompensa():
 	_Datos.data["coins"]= _Datos.data["coins"]+incremento;
 	_Datos.data["score"]= _Datos.data["score"]+_Datos.escore;
-<<<<<<< HEAD
-=======
+
 	if _Datos.data["score"] >= _Datos.data["rango"]:
 		cambiarStilo(1)
 		_Datos.data["rango"] += 10
->>>>>>> main_b
 	_Datos.save_data()
 	actualizarNodo()	
 	_Datos.reniciarVariables()
-	
-<<<<<<< HEAD
-=======
+
 func darRecompensaBonus():
 	$Timer.start()
 	_Datos.data["coins"]= _Datos.data["coins"]+20;
@@ -87,7 +79,6 @@ func darRecompensaBonus():
 	actualizarNodo()	
 
 	
->>>>>>> main_b
 func actualizarNodo():
 	textScore.text = str(_Datos.data["score"]).pad_zeros(3);
 func btnAtras():
@@ -137,8 +128,6 @@ func iniciarGiro():
 
 func _on_tweengiraluz_tween_completed(object, key):
 	iniciarGiro()
-<<<<<<< HEAD
-=======
 	pass 
 
 func  cambiarStilo(idEstilo)->void:
@@ -170,5 +159,4 @@ func _on_noContinuar_pressed():
 		_Datos.mensajebtn=false
 		get_parent().cambiarMenuJuego();
 		queue_free()
->>>>>>> main_b
 	pass # Replace with function body.

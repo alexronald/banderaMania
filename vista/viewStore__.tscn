@@ -153,9 +153,6 @@ corner_radius_bottom_left = 15
 
 [node name="viewStore" type="Control"]
 pause_mode = 2
-margin_right = 540.0
-margin_bottom = 1170.0
-rect_min_size = Vector2( 540, 0 )
 script = ExtResource( 4 )
 
 [node name="TextureRect" type="TextureRect" parent="."]

@@ -1,15 +1,11 @@
 extends Control
 onready var btnCoin = $Control/container/Container1/coin
 onready var btncloseStore = $Control/container/containe2/btnCerrar
-<<<<<<< HEAD
-var adscontrol = AdsControl.new()
-=======
 onready var toasMsg=$Label;
 onready var toasTween = $Label/toasTween
 
 var adscontrol = AdsControl.new()
 var nodoControlPrincipal;
->>>>>>> main_b
 var recopensa = false
 
 var tween = Tween.new()
@@ -35,11 +31,10 @@ func actualizarVista():
 	
 func SignalsConnect()->void:
 	btncloseStore.connect("pressed",self,"onBtnCloseStore")
-<<<<<<< HEAD
-=======
+
 	print(get_parent().get_node("Control").name)
 	connect("actulizar",nodoControlPrincipal,"cambiarCoins")
->>>>>>> main_b
+
 	
 	_AdMob.connect("interstitial_closed",self,"anunciocerrado");
 	_AdMob.connect("rewarded_video_closed",self,"videoAnuncioCerrado")
@@ -59,7 +54,6 @@ func onBtnCloseStore()->void:
 
 func _on_itemAdVerVideo_pressed():
 	adscontrol.cargarMostraVideoAds()
-<<<<<<< HEAD
 #	recopensa = true
 #	if _AdMob.is_rewarded_video_loaded():
 #		_AdMob.show_rewarded_video()
@@ -67,18 +61,18 @@ func _on_itemAdVerVideo_pressed():
 #		_AdMob.load_rewarded_video()
 	pass 
 	
-func videoAnuncioCerrado()->void:
-#	if recopensa :
-#		_Datos.data["coins"] = _Datos.data["coins"]+60
-#		_Datos.save_data()
-#		btnCoin.text = str(_Datos.data["coins"]).pad_zeros(4)
-#		_AdMob.load_rewarded_video();
-#		recopensa = false
-=======
-	pass 
+#func videoAnuncioCerrado()->void:
+##	if recopensa :
+##		_Datos.data["coins"] = _Datos.data["coins"]+60
+##		_Datos.save_data()
+##		btnCoin.text = str(_Datos.data["coins"]).pad_zeros(4)
+##		_AdMob.load_rewarded_video();
+##		recopensa = false
+#
+#	pass 
 	
 func videoAnuncioCerrado()->void:
->>>>>>> main_b
+
 	btnCoin.text = adscontrol.recompensaVideoAds()
 
 func cargarAnuncios()->void:
@@ -109,63 +103,50 @@ func anunciocerrado()->void:
 
 func _on_itemFacebook_pressed():
 	OS.shell_open("https://web.facebook.com/profile.php?id=100086531473650")
-<<<<<<< HEAD
-=======
+
 	buscarLista(5,400)
->>>>>>> main_b
 	pass # Replace with function body.
 
 
 func _on_itemTikTok_pressed():
 	OS.shell_open("https://www.tiktok.com/@andra.dev")
-<<<<<<< HEAD
-=======
+
 	buscarLista(7,500)
->>>>>>> main_b
 	pass # Replace with function body.
 
 
 func _on_itemInstagram_pressed():
 	OS.shell_open("https://www.instagram.com/andradev.oficial")
-<<<<<<< HEAD
-=======
+
 	buscarLista(6,500)
->>>>>>> main_b
+
 	pass # Replace with function body.
 
 
 func _on_itemWhatsapp_pressed():
 	OS.shell_open("https://api.whatsapp.com/send?text=hola,%20estoy%20jugando%20Bandera%20Mania%20puedes%20descargarlo%20de%20la%20google%20play...")
-<<<<<<< HEAD
-=======
 	buscarLista(4,300)
->>>>>>> main_b
 	pass # Replace with function body.
 
 
 func _on_itemFlying_pressed():
 	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.flyingsaucer")
-<<<<<<< HEAD
-=======
+
 	buscarLista(3,100)
->>>>>>> main_b
 	pass # Replace with function body.
 
 
 func _on_itemQuizQuimica_pressed():
 	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.quizquimica")
-<<<<<<< HEAD
-=======
 	buscarLista(2,100)
->>>>>>> main_b
 	pass # Replace with function body.
 
 
 func _on_itemQuizEnglish_pressed():
 	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.quizenglish")
-<<<<<<< HEAD
+
 	pass # Replace with function body.
-=======
+
 	buscarLista(1,100)
 	pass # Replace with function body.
 
@@ -195,4 +176,3 @@ func mostrartoasMsg():
 	yield(toasTween,"tween_completed")
 	toasMsg.visible = false
 	pass
->>>>>>> main_b

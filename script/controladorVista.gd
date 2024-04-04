@@ -17,11 +17,8 @@ func _ready():
 	else:
 		_AdMob.load_banner()
 		_AdMob.show_banner();
-<<<<<<< HEAD
-=======
 		
 	adsControl.cargarMostraInterstitialAds();
->>>>>>> main_b
 	pass
 #func _process(delta):
 #	print(Engine.get_frames_per_second())

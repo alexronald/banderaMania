@@ -1,100 +1,240 @@
 KEY,en_US,es_ES,pt
-$START,"Start","Comensar","Começar"
-$SpinRoulette,"Spin Roulette","Girar Ruleta","Roleta giratória"
-$RANDOM_LETTER,"Random Letter","Letra Aleatoria","Carta Aleatoria"
-$DELETE_LYRICS,"Delete Lyrics","Eliminar Letra","Excluir Letra"
-$SOLVE,"Solve","Resolver","Resolver"
-$CLOSE,"CLOSE","CERRAR","FECHAR"
-$PISTA,"Clue","Pista","Dica"
-$REVEAL_A_LETTER,"Reveal a Letter","Revelar una Letra","Revelar uma Carta"
-$REMOVE_A_LETTER,"Remove A Letter","Quitar Una Letra","Remover Uma Carta"
-$REVEAL_ANSWER,"Reveal Answer","Revelar Respuesta","Revelar Resposta"
-$MORE_GAME,"More games","Mas juegos","Mais jogos"
-$STORE,"Store","Tienda","Loja"
-$GET,"Get","Obtener","Obter"
-$COINS,"Coins","Monedas","Moedas"
-$FREE_COINS,"Free coins","Monedas gratis","Moedas grátis"
-$WATCH_ADS_VIDEO,"Watch ads video","Ver vídeo de anuncios","Assista ao vídeo de anúncios"
-$WATCH_AD_BANNER,"Watch ad banner","Ver anuncio publicitario","Assista ao anúncio em banner"
-$SHARE_ON_WHATSAPP,"Share on WhatsApp","Comparte en WhatsApp","Compartilhe no WhatsApp"
-$LIKE_ON_FACEBOOK,"like on facebook","Me gusta en facebook","Como no Facebook"
-$FOLLOW_US_ON_INSTAGRAM,"Follow us on instagram","Siguenos en instagram","Seguir no Instagram"
-$FOLLOW_US_ON_TIKTOK,"Follow us on Tiktok","Siguenos en Tiktok","Seguir no Tiktok"
-$SHOPPING,"Shopping","Compras","Compras"
-$SPIN,"Spin","Girar","Rodar"
-$SPIN_FREE,"Spin free","Girar gratis","Gire livre"
-$TURNS,"Turns","Giros","Voltas"
-$RIGHT,"RIGHT","CORRECTO","CORRECTO"
-$FOLLOWING,"FOLLOWING","SIGUIENTE","SEGUINDO"
-$AJUSTE,"setting","Ajuste","Contexto"
-$SONIDO,"Sound","Sonido","Som"
-$MUSICA,"Music","Musica","Musica"
-$NOTIFICACION,"Notification","Notificación","Notificação"
-$ANUNCIO,"Ad","Anuncio","Anúncio"
-$NEXT,"Next","Siguiente","Próximo"
-$WELL_DONE,"Well Done","Bien Hecho","Bem Feito"
-$LEVEL,"Level","Nivel","Nível"
-$VIEW_AD,"View Ad","Ver Anuncio","Ver Anúncio"
-$CONGRATULATIONS,"Congratulations","Felicitaciones","Parabéns"
-$NOT_ONLY_CONTINUE,"Not Only Continue","No Solo Continuar","Não Continue"
-$REWARD_ALREADY_DELIVERED,"Reward Already Delivered","Recompensa Ya Se Entregó","Recompensa Já Entregue"
-$CLAVE,"EN","ES","PT"
-$ARGELIA,"algeria","argelia","argélia"
-$ANGOLA,"angola","angola","angola"
-$BENIA,"benin","benín","benim"
-$BOTSUANA,"botswana","botsuana","botsuana"
-$BURKINAFASO,"burkina faso","burkina faso","burquina faso"
-$BURUNDI,"burundi","burundi","burundi"
-$CABOVERDE,"cape verde","cabo verde","cabo verde"
-$CAMERUN,"cameroon","camerún","camarões"
-$CHAD,"chad","chad","chade"
-$COMORAS,"comoros","comoras","comores"
-$COSTADEMARFIL,"ivory coast","costa de marfil","costa do marfim"
-$EGIPTO,"egypt","egipto","egito"
-$ESUATINI,"eswatini","esuatini","suazilândia"
-$ETIOPIA,"ethiopia","etiopía","etiópia"
-$GABON,"gabon","gabón","gabão"
-$GAMBIA,"gambia","gambia","gâmbia"
-$GHANA,"ghana","ghana","gana"
-$GUINEABISSAU,"guinea bissau","guinea bissau","guiné bissau"
-$GUINEAECUATORIAL,"equatorial guinea","guinea ecuatorial","guiné equatorial"
-$GUINEA,"guinea","guinea","guiné"
-$KENIA,"kenya","kenia","quénia"
-$LESOTO,"lesotho","lesoto","lesoto"
-$LIBERIA,"liberia","liberia","libéria"
-$LIBIA,"libya","libia","líbia"
-$MADAGASCAR,"madagascar","madagascar","madagáscar"
-$MALAWI,"malawi","malaui","malawi"
-$MALI,"mali","malí","mali"
-$MARRUECOS,"morocco","marruecos","marrocos"
-$MAURICIO,"mauritius","mauricio","maurício"
-$MAURITANIA,"mauritania","mauritania","mauritânia"
-$MOZAMBIQUE,"mozambique","mozambique","moçambique"
-$NAMIBIA,"namibia","namibia","namíbia"
-$NIGER,"niger","níger","níger"
-$NIGERIA,"nigeria","nigeria","nígeria"
-$REPUBLICACENTROAFRICANA,"central african republic","república centro africana","república centro africana"
-$REPUBLICADELCONGO,"republic of the congo","república del congo","república do congo"
-$REPUBLICADEMOCRATICADELCONGO,"democratic republic of the congo","república de mocrática del congo","república democrática do congo"
-$REUNION,"reunion","reunión","reunião"
-$RUANDA,"rwanda","ruanda","ruanda"
-$SAHARAOCCIDENTAL,"western sahara","sahara occidental","saara ocidental"
-$SANTOTOMEYPRINCIPE,"sao tomeand principe","santo tomé y príncipe","são tomée príncipe"
-$SENEGAL,"senegal","senegal","senegal"
-$SEYCHELLES,"seychelles","seychelles","seychelles"
-$SIERRALEONA,"sierra leone","sierra leona","serra leoa"
-$SOMALIA,"somalia","somalia","somália"
-$SOMALILANDIA,"somaliland","somaliland ia","somalilând ia"
-$SUDAFRICA,"southafrica","sudáfrica","áfrica do sul"
-$SUDAN,"sudan","sudán","sudão"
-$SUDANDELSUR,"south sudan","sudán del sur","sudão do sul"
-$TANZANIA,"tanzania","tanzania","tanzânia"
-$TOGO,"togo","togo","togo"
-$TUNEZ,"tunisia","túnez","tunísia"
-$UGANDA,"uganda","uganda","uganda"
-$YIBUTI,"djibouti","yibuti","djibuti"
-$ZAMBIA,"zambia","zambia","zâmbia"
-$ZIMBABUE,"zimbabwe","zimbabue","zimbábue"
-
-
-
+$START,Start,Comensar,Começar
+$SpinRoulette,Spin Roulette,Girar Ruleta,Roleta giratória
+$RANDOM_LETTER,Random Letter,Letra Aleatoria,Carta Aleatoria
+$DELETE_LYRICS,Delete Lyrics,Eliminar Letra,Excluir Letra
+$SOLVE,Solve,Resolver,Resolver
+$CLOSE,CLOSE,CERRAR,FECHAR
+$PISTA,Clue,Pista,Dica
+$REVEAL_A_LETTER,Reveal a Letter,Revelar una Letra,Revelar uma Carta
+$REMOVE_A_LETTER,Remove A Letter,Quitar Una Letra,Remover Uma Carta
+$REVEAL_ANSWER,Reveal Answer,Revelar Respuesta,Revelar Resposta
+$MORE_GAME,More games,Mas juegos,Mais jogos
+$STORE,Store,Tienda,Loja
+$GET,Get,Obtener,Obter
+$COINS,Coins,Monedas,Moedas
+$FREE_COINS,Free coins,Monedas gratis,Moedas grátis
+$WATCH_ADS_VIDEO,Watch ads video,Ver vídeo de anuncios,Assista ao vídeo de anúncios
+$WATCH_AD_BANNER,Watch ad banner,Ver anuncio publicitario,Assista ao anúncio em banner
+$SHARE_ON_WHATSAPP,Share on WhatsApp,Comparte en WhatsApp,Compartilhe no WhatsApp
+$LIKE_ON_FACEBOOK,like on facebook,Me gusta en facebook,Como no Facebook
+$FOLLOW_US_ON_INSTAGRAM,Follow us on instagram,Siguenos en instagram,Seguir no Instagram
+$FOLLOW_US_ON_TIKTOK,Follow us on Tiktok,Siguenos en Tiktok,Seguir no Tiktok
+$SHOPPING,Shopping,Compras,Compras
+$SPIN,Spin,Girar,Rodar
+$SPIN_FREE,Spin free,Girar gratis,Gire livre
+$TURNS,Turns,Giros,Voltas
+$RIGHT,RIGHT,CORRECTO,CORRECTO
+$FOLLOWING,FOLLOWING,SIGUIENTE,SEGUINDO
+$AJUSTE,setting,Ajuste,Contexto
+$SONIDO,Sound,Sonido,Som
+$MUSICA,Music,Musica,Musica
+$NOTIFICACION,Notification,Notificación,Notificação
+$ANUNCIO,Ad,Anuncio,Anúncio
+$NEXT,Next,Siguiente,Próximo
+$WELL_DONE,Well Done,Bien Hecho,Bem Feito
+$LEVEL,Level,Nivel,Nível
+$VIEW_AD,View Ad,Ver Anuncio,Ver Anúncio
+$CONGRATULATIONS,Congratulations,Felicitaciones,Parabéns
+$NOT_ONLY_CONTINUE,Not Only Continue,No Solo Continuar,Não Continue
+$REWARD_ALREADY_DELIVERED,Reward Already Delivered,Recompensa Ya Se Entregó,Recompensa Já Entregue
+$CLAVE,EN,ES,PT
+$ARGELIA,algeria,argelia,argélia
+$ANGOLA,angola,angola,angola
+$BENIA,benin,benín,benim
+$BOTSUANA,botswana,botsuana,botsuana
+$BURKINAFASO,burkina faso,burkina faso,burquina faso
+$BURUNDI,burundi,burundi,burundi
+$CABOVERDE,cape verde,cabo verde,cabo verde
+$CAMERUN,cameroon,camerún,camarões
+$CHAD,chad,chad,chade
+$COMORAS,comoros,comoras,comores
+$COSTADEMARFIL,ivory coast,costa de marfil,costa do marfim
+$EGIPTO,egypt,egipto,egito
+$ESUATINI,eswatini,esuatini,suazilândia
+$ETIOPIA,ethiopia,etiopía,etiópia
+$GABON,gabon,gabón,gabão
+$GAMBIA,gambia,gambia,gâmbia
+$GHANA,ghana,ghana,gana
+$GUINEABISSAU,guinea bissau,guinea bissau,guiné bissau
+$GUINEAECUATORIAL,equatorial guinea,guinea ecuatorial,guiné equatorial
+$GUINEA,guinea,guinea,guiné
+$KENIA,kenya,kenia,quénia
+$LESOTO,lesotho,lesoto,lesoto
+$LIBERIA,liberia,liberia,libéria
+$LIBIA,libya,libia,líbia
+$MADAGASCAR,madagascar,madagascar,madagáscar
+$MALAWI,malawi,malaui,malawi
+$MALI,mali,malí,mali
+$MARRUECOS,morocco,marruecos,marrocos
+$MAURICIO,mauritius,mauricio,maurício
+$MAURITANIA,mauritania,mauritania,mauritânia
+$MOZAMBIQUE,mozambique,mozambique,moçambique
+$NAMIBIA,namibia,namibia,namíbia
+$NIGER,niger,níger,níger
+$NIGERIA,nigeria,nigeria,nígeria
+$REPUBLICACENTROAFRICANA,central african republic,república centro africana,república centro africana
+$REPUBLICADELCONGO,republic of the congo,república del congo,república do congo
+$REPUBLICADEMOCRATICADELCONGO,democratic republic of the congo,república de mocrática del congo,república democrática do congo
+$REUNION,reunion,reunión,reunião
+$RUANDA,rwanda,ruanda,ruanda
+$SAHARAOCCIDENTAL,western sahara,sahara occidental,saara ocidental
+$SANTOTOMEYPRINCIPE,sao tomeand principe,santo tomé y príncipe,são tomée príncipe
+$SENEGAL,senegal,senegal,senegal
+$SEYCHELLES,seychelles,seychelles,seychelles
+$SIERRALEONA,sierra leone,sierra leona,serra leoa
+$SOMALIA,somalia,somalia,somália
+$SOMALILANDIA,somaliland,somaliland ia,somalilând ia
+$SUDAFRICA,southafrica,sudáfrica,áfrica do sul
+$SUDAN,sudan,sudán,sudão
+$SUDANDELSUR,south sudan,sudán del sur,sudão do sul
+$TANZANIA,tanzania,tanzania,tanzânia
+$TOGO,togo,togo,togo
+$TUNEZ,tunisia,túnez,tunísia
+$UGANDA,uganda,uganda,uganda
+$YIBUTI,djibouti,yibuti,djibuti
+$ZAMBIA,zambia,zambia,zâmbia
+$ZIMBABUE,zimbabwe,zimbabue,zimbábue
+$AMERICA,america,america,america
+$ANTIGUAYBARBUDA,"antigua and barbuda","antigua y barbuda","antígua e barbuda"
+$ARGENTINA,"argentina","argentina","argentina"
+$BAHAMAS,"bahamas","bahamas","bahamas"
+$BARBADOS,"barbados","barbados","barbados"
+$BELICE,"belize","belice","belize"
+$BOLIVIA,"bolivia","bolivia","bolívia"
+$BRASIL,"brazil","brasil","brasil"
+$CANADA,"canada","canadá","canadá"
+$CHILE,"chile","chile","chile"
+$COLOMBIA,"colombia","colombia","colômbia"
+$COSTARICA,"costa rica","costa rica","costa rica"
+$CUBA,"cuba","cuba","cuba"
+$DOMINICA,"dominica","dominica","dominica"
+$ECUADOR,"ecuador","ecuador","equador"
+$ELSALVADOR,"el salvador","el salvador","el salvador"
+$ESTADOSUNIDOS,"united states","estados unidos","estados unidos"
+$GRANADA,"grenada","granada","granada"
+$GUATEMALA,"guatemala","guatemala","guatemala"
+$GUAYANAFRANCESA,"french guiana","guayana francesa","guiana francesa"
+$GUYANA,"guyana","guyana","guiana"
+$HAITI,"haiti","haití","haiti"
+$HONDURAS,"honduras","honduras","honduras"
+$JAMAICA,"jamaica","jamaica","jamaica"
+$MEXICO,"mexico","méxico","méxico"
+$NICARAGUA,"nicaragua","nicaragua","nicarágua"
+$PANAMA,"panama","panamá","panamá"
+$PARAGUAY,"paraguay","paraguay","paraguai"
+$PERU,"peru","perú","peru"
+$PUERTORICO,"puerto rico","puerto rico","porto rico"
+$ASIA,"asia","asia","asia"
+$AFGANISTAN,"afghanistan","afganistán","afeganistão"
+$ARABIASAUDITA,"saudi arabia","arabia saudita","arabia saudita"
+$ARMENIA,"armenia","armenia","armênia"
+$AZERBAIYAN,"azerbaijan","azerbaiyán","azerbaijão"
+$BANGLADESH,"bangladesh","bangladesh","bangladesh"
+$BEREIN,"bahrain","berein","bahrain"
+$BRUNEL,"brunei","brunel","brunei"
+$BUTAN,"bhutan","butan","butão"
+$CAMBOYA,"cambodia","camboya","camboja"
+$CATAR,"qatar","catar","catar"
+$CHINA,"china","china","china"
+$COREADELNORTE,"north korea","corea del norte","coreia do norte"
+$COREADELSUR,"south korea","corea de sur","coreia do sul"
+$EMIRATOSARABESUNIDOS,"united arab emirates","emirato arabe unido","emirado árabe unido"
+$FILIPINAS,"philippines","filipinas","filipinas"
+$GEORGIA,"georgia","georgia","geórgia"
+$INDIA,"india","india","índia"
+$INDONESIA,"indonesia","indonesia","indonésia"
+$IRAN,"iran","irán","irã"
+$IRAQ,"iraq","iraq","iraque"
+$ISRAEL,"israel","israel","israel"
+$JAPON,"japan","japón","japão"
+$JORDANIA,"jordan","jordania","jordânia"
+$KAZAJISTAN,"kazakhstan","kazajistán","cazaquistão"
+$KIRGUISTAN,"kyrgyzstan","kirguistán","quirguistão"
+$KUWAIT,"kuwait","kuwait","kuwait"
+$LAOS,"laos","laos","laos"
+$LIBANO,"lebanon","líbano","lebano"
+$MALASIA,"malaysia","malasia","malásia"
+$MALDIVAS,"maldives","maldivas","maldivas"
+$MONGOLIA,"mongolia","mongolia","mongólia"
+$MYANMAR,"myanmar","myanmar","myanmar"
+$NEPAL,"nepal","nepal","nepal"
+$OMAN,"oman","omán","omã"
+$PAKISTAN,"pakistan","pakistán","paquistão"
+$PALESTINA,"palestine","palestina","palestina"
+$RUSIA,"russia","rusia","rússia"
+$SINGAPUR,"singapore","singapur","singapura"
+$SIRIA,"syria","siria","síria"
+$SRILANKA,"sri lanka","sri lanka","sri lanka"
+$TAILANDIA,"thailand","tailandia","tailândia"
+$TAIWAN,"taiwan","taiwán","taiwan"
+$TAYIKISTAN,"tajikistan","tayikistán","tadjiquistão"
+$TIMORORIENTAL,"east timor","timor oriental","timor leste"
+$TURKMENISTAN,"turkmenis tan","turkmenis tán","turcomenis tão"
+$TURQUIA,"turkey","turquía","turquia"
+$UZBEKISTAN,"uzbekistan","uzbekistán","uzbequistão"
+$VIETNAM,"vietnam","vietnam","vietnã"
+$YEMEN,"yemen","yemen","iêmen"
+$EUROPA,"europa","europa","europa"
+$ALBANIA,"albania","albania","albânia"
+$ALEMANIA,"germany","alemania","alemanha"
+$ANDORRA,"andorra","andorra","andorra"
+$ARMENIA,"armenia","armenia","armênia"
+$AUSTRALIA,"australia","australia","austrália"
+$AZERBAIYAN,"azerbaijan","azerbaiyán","azerbaijão"
+$BELGICA,"belgium","bélgica","bélgica"
+$BIELORRUSIA,"belarus","bielorrusia","bielorrússia"
+$BOSNIAYHERZEGOVINA,"bosnia and herzegovina","bosnia y herzegovina","bósnia e herzegovina"
+$BULGARIA,"bulgaria","bulgaria","bulgária"
+$CHIPRE,"cyprus","chipre","chipre"
+$CROACIA,"croatia","croacia","croácia"
+$DINAMARCA,"denmark","dinamarca","dinamarca"
+$ESLOVAQUIA,"slovakia","eslovaquia","eslováquia"
+$ESLOVENIA,"slovenia","eslovenia","eslovênia"
+$ESPANIA,"spain","españa","espanha"
+$ESTONIA,"estonia","estonia","estônia"
+$FINLANDIA,"finland","finlandia","finlândia"
+$FRANCIA,"france","francia","frança"
+$GEORGIA,"georgia","georgia","geórgia"
+$GRECIA,"greece","grecia","grécia"
+$HUNGRIA,"hungary","hungría","hungria"
+$IRLANDA,"ireland","irlanda","irlanda"
+$ITALIA,"italy","italia","itália"
+$LETONIA,"latvia","letonia","letônia"
+$LIECHTENSTEIN,"liechtens tein","liechtens tein","liechtens tein"
+$LITUANIA,"lithuania","lituania","lituânia"
+$LUXEMBURGO,"luxembourg","luxemburgo","luxemburgo"
+$MACEDONIADELNORTE,"north macedonia","macedonia del norte","macedônia do norte"
+$MALTA,"malta","malta","malta"
+$MOLDAVIA,"moldova","moldavia","moldávia"
+$MONACO,"monaco","mónaco","mônaco"
+$MONTENEGRO,"montenegro","montenegro","montenegro"
+$NORUEGA,"norway","noruega","noruega"
+$PAISESBAJOS,"netherlands","países bajos","países baixos"
+$POLONIA,"poland","polonia","polônia"
+$PORTUGAL,"portugal","portugal","portugal"
+$REINOUNIDO,"united kingdom","reino unido","reino unido"
+$REPUBLICACHECA,"czech republic","república checa","república tcheca"
+$RUMANIA,"romania","rumania","romênia"
+$RUSIA,"russia","rusia","rússia"
+$SANMARINO,"san marino","san marino","san marino"
+$SERBIA,"serbia","serbia","sérvia"
+$SUECIA,"sweden","suecia","suécia"
+$SUIZA,"switzerland","suiza","suíça"
+$TURQUIA,"turkey","turquía","turquia"
+$UCRANIA,"ukraine","ucrania","ucrânia"
+$VATICANO,"vatican","vaticano","vaticano"
+$ISLANDIA,"iceland","islandia","islândia"
+$FIYI,"fiji","fiyi","fiji"
+$ISLASMARSHALL,"marshall islands","islas marshall","ilhas marshall"
+$ISLASSALOMON,"solomon islands","islas salomon","ilhas salomão"
+$KIRIBATI,"kiribati","kiribati","kiribati"
+$MICRONESIA,"micronesia","micronesia","micronésia"
+$NAURU,"nauru","nauru","nauru"
+$NUEVAZELANDA,"new zealand","nueva zelanda","nova zelândia"
+$PALAU,"palau","palau","palau"
+$PAPUANUEVAGUINEA,"papua new guinea","papua nueva guinea","papua nova guiné"
+$SAMOA,"samoa","samoa","samoa"
+$TONGA,"tonga","tonga","tonga"
+$TUVALU,"tuvalu","tuvalu","tuvalu"
+$VANUATU,"vanuatu","vanuatu","vanuatu"

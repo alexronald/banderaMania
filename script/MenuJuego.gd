@@ -199,6 +199,7 @@ func sinSpacio()->String:
 #	get_tree().paused=true;
 #	pass 
 func btnPistaMostrar():
+	Audiocontrol.activarEfectoUI()
 	menuPistas.show();
 	get_tree().paused=true;
 	pass 
@@ -278,6 +279,7 @@ func comprobarResultado()->void:
 #		if _Datos.nivel <= _Datos.data["nivel"]:
 #				_Datos.data["nivel"] +=1;
 #				_Datos.save_data();
+		Audiocontrol.cambiarSonidi(1)
 		efectoletras("ffffff","#92ff7c")
 		yield(tween,"tween_all_completed");
 		efectoletras("#92ff7c","#92ff7c")
@@ -286,6 +288,7 @@ func comprobarResultado()->void:
 		
 	else:
 		if contadorCompleto >= resultado.length():
+			Audiocontrol.cambiarSonidi(2)
 			print("INCORRECTO")
 			efectoletras("#ff7272","#00ffffff")
 			yield(tween,"tween_all_completed");
@@ -400,10 +403,12 @@ func setNivel()->void:
 #	get_tree().paused=false;
 #	pass 
 func btnCerrarViewPistaHide()->void:
+	Audiocontrol.activarEfectoUI()
 	menuPistas.hide();
 	get_tree().paused=false;
 
 func _on_eliminarLetra_pressed():
+	Audiocontrol.activarEfectoUI()
 	var coins=int(TextCoins.text);
 	if coins >= 80:
 		coins -= 80;
@@ -418,6 +423,7 @@ func _on_eliminarLetra_pressed():
 
 
 func _on_resolver_pressed():
+	Audiocontrol.activarEfectoUI()
 	var coins=int(TextCoins.text);
 	if coins >= 120:
 		coins -= 120;
@@ -433,6 +439,7 @@ func _on_resolver_pressed():
 	pass
 
 func _on_letraAleatorio_pressed():
+	Audiocontrol.activarEfectoUI()
 	var coins=int(TextCoins.text);
 	if coins >= 50:
 		coins -= 50;
@@ -465,11 +472,13 @@ func realizarCompra(codigo:int,coins:int)->void:
 
 
 func _on_btnlimpiar_pressed():
+	Audiocontrol.activarEfectoUI()
 	limpiarNoDisable()
 	pass # Replace with function body.
 
 
 func _on_btngirar_pressed():
+	Audiocontrol.activarEfectoUI()
 	var giros = _Datos.data["giros"]
 	if giros < 1:
 		print("mostrar anuncio")
@@ -486,6 +495,7 @@ func volverDeMenuRuleta():
 
 
 func _on_btnMonedas_pressed():
+	Audiocontrol.activarEfectoUI()
 	adscontrol.cargarMostraVideoAds()
 	pass # Replace with function body.
 

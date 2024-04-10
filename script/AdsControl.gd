@@ -8,12 +8,17 @@ func adsControl():
 
 func cargarMostraVideoAds():
 	recopensa = true
+	_AdMob.load_rewarded_video()
+	_AdMob.connect("rewarded_video_loaded",self,"mostrar")
+	_AdMob.connect("interstitial_failed_to_load",self,"errorCargarAnuncio")
+	
+	pass 
+func mostrar():
 	if _AdMob.is_rewarded_video_loaded():
 		_AdMob.show_rewarded_video()
-	else:
-		_AdMob.load_rewarded_video()
-		_AdMob.show_rewarded_video()
-	pass 
+		
+func errorCargarAnuncio():
+	_AdMob.load_rewarded_video()
 
 func recompensaVideoAds()->String:
 	var newCoin=_Datos.data["coins"]

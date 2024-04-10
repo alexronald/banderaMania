@@ -30,6 +30,7 @@ func getPosicionInicial()->Vector2:
 	return posisionInicial;
 
 func setPresionado(newPresion:bool)->void:
+	Audiocontrol.activarEfectoUI()
 	presionado = newPresion;
 
 func getPresionado()->bool:

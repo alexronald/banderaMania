@@ -24,8 +24,8 @@ func _ready():
 	pass 
 
 func ControlarCoins()->void:
-	if _Datos.data["coins"] >= 10000:
-		_Datos.data["coins"] = 9999;
+	if _Datos.data["coins"] >= 100000:
+		_Datos.data["coins"] = 99999;
 		_Datos.save_data();
 
 func cambiarCoins():
@@ -33,7 +33,7 @@ func cambiarCoins():
 	print("señalresivida")
 	pass
 func onBtnCoinStore():
-	print("viewStore")
+	Audiocontrol.activarEfectoUI()
 	var instViewStore = viewStore.instance();
 	get_parent().add_child(instViewStore)
 	get_tree().paused = !get_tree().paused;
@@ -43,6 +43,7 @@ func conectarSenales()->void:
 	btnCoin.connect("pressed",self,"onBtnCoinStore")
 	
 func pressedBtnAjustes()->void:
+	Audiocontrol.activarEfectoUI()
 	print("MENU AJUSTE")
 #	AudioControl.activarEfectoUI()
 	var instMenuAjuste = menuAjuste.instance();
@@ -71,6 +72,7 @@ func get_node_padre(nodo_padre):
 	pass
 	
 func _on_Button_pressed():
+	Audiocontrol.activarEfectoUI()
 	self.connect("sigBtnAtras",get_parent(),"btnAtras")
 	emit_signal("sigBtnAtras");
 

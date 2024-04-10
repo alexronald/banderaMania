@@ -26,6 +26,7 @@ func posicionInicial()->void:
 
 
 func _on_btnAtras_pressed():
+	activarEfecto()
 	get_tree().paused = !get_tree().paused
 	tween.interpolate_property(self,"rect_position",Vector2(210,0),Vector2(600,0),1,1,1)
 	tween.start()
@@ -44,3 +45,35 @@ func guardarAjuste()->void:
 	#
 	_Datos.cambiarIdioma()
 	#AudioControl.activarEfectoUI()
+
+func activarEfecto():
+	Audiocontrol.verificar_configuracion(int($VBoxContainer/cbSonido.pressed),Audiocontrol.efectoUI)
+
+func activarMusica():
+	Audiocontrol.verificar_configuracion(int($VBoxContainer/cbMusica.pressed),Audiocontrol.musica)
+
+
+func _on_cbSonido_pressed():
+	activarEfecto()
+	pass # Replace with function body.
+
+
+func _on_cbMusica_pressed():
+	activarMusica()
+	activarEfecto()
+	pass # Replace with function body.
+
+
+func _on_cbNotificacion_pressed():
+	activarEfecto()
+	pass # Replace with function body.
+
+
+func _on_cbAnuncio_pressed():
+	activarEfecto()
+	pass # Replace with function body.
+
+
+func _on_obIdiona_pressed():
+	activarEfecto()
+	pass # Replace with function body.

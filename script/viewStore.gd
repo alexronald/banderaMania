@@ -3,7 +3,10 @@ onready var btnCoin = $Control/container/Container1/coin
 onready var btncloseStore = $Control/container/containe2/btnCerrar
 onready var toasMsg=$Label;
 onready var toasTween = $Label/toasTween
+onready var playBilling=$PlayBilling
 
+var alertaMsg = preload("res://vista/alertaMsg.tscn")
+var instaceAlerta=null
 var adscontrol = AdsControl.new()
 var nodoControlPrincipal;
 var recopensa = false
@@ -23,8 +26,8 @@ func _ready():
 	pass
 	
 func ControlarCoins()->void:
-	if _Datos.data["coins"] >= 10000:
-		_Datos.data["coins"] = 9999;
+	if _Datos.data["coins"] >= 100000:
+		_Datos.data["coins"] = 99999;
 		_Datos.save_data();
 func actualizarVista():
 	btnCoin.text = str(_Datos.data["coins"]).pad_zeros(4)
@@ -40,9 +43,11 @@ func SignalsConnect()->void:
 	_AdMob.connect("rewarded_video_closed",self,"videoAnuncioCerrado")
 	_AdMob.connect("rewarded_video_loaded",self,"mostrar")
 	_AdMob.connect("interstitial_failed_to_load",self,"errorCargarAnuncio")
+	playBilling.connect("purchase_consumed",self,"productoConsumido")
 	pass
 func onBtnCloseStore()->void:
 	#emit_signal("actulizar")
+	Audiocontrol.activarEfectoUI()
 	get_tree().paused = false;
 	tween.interpolate_property(self,"rect_position",Vector2(0,0),Vector2(0,-1170),1,1,1)
 	tween.start()
@@ -53,26 +58,13 @@ func onBtnCloseStore()->void:
 
 
 func _on_itemAdVerVideo_pressed():
+	Audiocontrol.activarEfectoUI()
 	adscontrol.cargarMostraVideoAds()
-#	recopensa = true
-#	if _AdMob.is_rewarded_video_loaded():
-#		_AdMob.show_rewarded_video()
-#	else:
-#		_AdMob.load_rewarded_video()
+	$ScrollContainer/CenterContainer/VBoxContainer/itemAdVerVideo/GridContainer2/actionGet.text =  tr("$LOADING_ADS")
 	pass 
 	
-#func videoAnuncioCerrado()->void:
-##	if recopensa :
-##		_Datos.data["coins"] = _Datos.data["coins"]+60
-##		_Datos.save_data()
-##		btnCoin.text = str(_Datos.data["coins"]).pad_zeros(4)
-##		_AdMob.load_rewarded_video();
-##		recopensa = false
-#
-#	pass 
-	
 func videoAnuncioCerrado()->void:
-
+	$ScrollContainer/CenterContainer/VBoxContainer/itemAdVerVideo/GridContainer2/actionGet.text =  tr("$GET")
 	btnCoin.text = adscontrol.recompensaVideoAds()
 
 func cargarAnuncios()->void:
@@ -81,6 +73,8 @@ func cargarAnuncios()->void:
 	
 
 func _on_itemAdBanner_pressed():
+	Audiocontrol.activarEfectoUI()
+	
 	if _AdMob.is_interstitial_loaded():
 		_AdMob.show_interstitial()
 		
@@ -102,52 +96,83 @@ func anunciocerrado()->void:
 
 
 func _on_itemFacebook_pressed():
+	Audiocontrol.activarEfectoUI()
 	OS.shell_open("https://web.facebook.com/profile.php?id=100086531473650")
-
 	buscarLista(5,400)
 	pass # Replace with function body.
 
 
 func _on_itemTikTok_pressed():
+	Audiocontrol.activarEfectoUI()
 	OS.shell_open("https://www.tiktok.com/@andra.dev")
-
 	buscarLista(7,500)
 	pass # Replace with function body.
 
 
 func _on_itemInstagram_pressed():
+	Audiocontrol.activarEfectoUI()
 	OS.shell_open("https://www.instagram.com/andradev.oficial")
-
 	buscarLista(6,500)
 
 	pass # Replace with function body.
 
 
 func _on_itemWhatsapp_pressed():
+	Audiocontrol.activarEfectoUI()
+	
 	OS.shell_open("https://api.whatsapp.com/send?text=hola,%20estoy%20jugando%20Bandera%20Mania%20puedes%20descargarlo%20de%20la%20google%20play...")
 	buscarLista(4,300)
 	pass # Replace with function body.
 
 
 func _on_itemFlying_pressed():
-	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.flyingsaucer")
-
-	buscarLista(3,100)
+	Audiocontrol.activarEfectoUI()
+	mostrarAlerta("Flying Saucer Game",3)
+		
+#	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.flyingsaucer")
+#	buscarLista(3,100)
 	pass # Replace with function body.
+func mostrarAlerta(title,id):
+	var lista:Array=_Datos.data["store"];
+	if lista.find(id) != -1:
+		if instaceAlerta == null:
+			instaceAlerta = alertaMsg.instance();
+			add_child(instaceAlerta)
+			instaceAlerta.setDatos(title,"$REWARD_CLAIMED",id)
+			instaceAlerta.connect("estadoButton",self,"confimacio")
+	else:
+		if instaceAlerta == null:
+			instaceAlerta = alertaMsg.instance();
+			add_child(instaceAlerta)
+			instaceAlerta.setDatos(title,"$INSTALL_GAME",id)
+			instaceAlerta.connect("estadoButton",self,"confimacio")
 
-
+func confimacio(idRecompensa):
+	match idRecompensa:
+		1:
+			OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.quizenglish")
+			buscarLista(1,100)
+		2:
+			OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.quizquimica")
+			buscarLista(2,100)
+		3:
+			OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.flyingsaucer")
+			buscarLista(3,100)
+	instaceAlerta = null
+	print("confrm")
 func _on_itemQuizQuimica_pressed():
-	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.quizquimica")
-	buscarLista(2,100)
+	Audiocontrol.activarEfectoUI()
+	mostrarAlerta("Quiz-Química",2)
+#	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.quizquimica")
+#	buscarLista(2,100)
 	pass # Replace with function body.
 
 
 func _on_itemQuizEnglish_pressed():
-	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.quizenglish")
-
-	pass # Replace with function body.
-
-	buscarLista(1,100)
+	Audiocontrol.activarEfectoUI()
+	mostrarAlerta("Quiz English",1)
+#	OS.shell_open("https://play.google.com/store/apps/details?id=org.godotengine.quizenglish")
+#	buscarLista(1,100)
 	pass # Replace with function body.
 
 func buscarLista(idItem,recompesa)->bool:
@@ -176,3 +201,37 @@ func mostrartoasMsg():
 	yield(toasTween,"tween_completed")
 	toasMsg.visible = false
 	pass
+
+
+func _on_coin5000_pressed():
+	Audiocontrol.activarEfectoUI()
+	playBilling.buy(0)
+	pass # Replace with function body.
+
+
+func _on_coins11000_pressed():
+	Audiocontrol.activarEfectoUI()
+	playBilling.buy(1);
+	pass # Replace with function body.
+
+
+func _on_coins25000_pressed():
+	Audiocontrol.activarEfectoUI()
+	playBilling.buy(2);
+	pass # Replace with function body.
+
+func productoConsumido(token,idProducto):
+	match idProducto:
+		"coins_5000":
+			_Datos.data["coins"] += 5000;
+			_Datos.save_data()
+			actualizarVista()
+		"coins_11000":
+			_Datos.data["coins"] += 11000;
+			_Datos.save_data()
+			actualizarVista()
+		"coins_25000":
+			_Datos.data["coins"] += 25000;
+			_Datos.save_data()
+			actualizarVista()
+	emit_signal("actulizar")

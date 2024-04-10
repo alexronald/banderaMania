@@ -45,6 +45,7 @@ config/windows_native_icon="res://recursos/icon_w.ico"
 
 _Datos="*res://script/DATOS.gd"
 _AdMob="*res://Singleton/AdMob.tscn"
+Audiocontrol="*res://Singleton/Audiocontrol.tscn"
 
 [display]
 
@@ -57,6 +58,15 @@ window/stretch/aspect="keep"
 [gui]
 
 common/drop_mouse_on_gui_input_disabled=true
+
+[importer_defaults]
+
+ogg_vorbis={
+"loop": false
+}
+wav={
+"edit/loop_mode": 1
+}
 
 [input_devices]
 

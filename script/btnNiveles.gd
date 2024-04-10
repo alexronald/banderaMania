@@ -29,6 +29,7 @@ func spriteStartVisible():
 	spritestar.visible=ver;
 
 func _on_btn1_pressed():
+	Audiocontrol.activarEfectoUI()
 	var controladorVista = get_tree().get_root().get_node("controladorVista")
 	if controladorVista.has_method("cambiarMenuJuego"):
 		_Datos.nivel = int(number.text);

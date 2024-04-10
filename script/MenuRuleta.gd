@@ -28,6 +28,7 @@ func _ready():
 	pass # Replace with function body.
 
 func btnAtras():
+	Audiocontrol.activarEfectoUI()
 	if get_parent().has_method("cambiarMenuPricipal"):
 		get_parent().cambiarMenuPricipal();
 		queue_free()
@@ -42,7 +43,7 @@ func btnAtras():
 #	pass
 
 func _on_btnGirar_pressed():
-	
+	Audiocontrol.activarEfectoUI()
 	if !Ruleta_girando and cantGiros >= 1:
 		get_velosiad_ramdom()
 		$clip/areaClip/CollisionShape2D.disabled = false
@@ -65,7 +66,8 @@ func girarRuleta()->void:
 	tween.start()
 	
 
-func _on_areaClip_area_entered(area):
+func _on_areaClip_area_entered(_area):
+	Audiocontrol.cambiarSonidi(3)
 	iniciarPrimerAnimacio();
 	pass
 
@@ -122,6 +124,7 @@ func obtenerPremio():
 		
 	pass
 func giroGratis():
+	Audiocontrol.activarEfectoUI()
 	if _AdMob.is_rewarded_video_loaded():
 		_AdMob.show_rewarded_video()
 	else:

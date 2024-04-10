@@ -5,7 +5,7 @@ $RANDOM_LETTER,Random Letter,Letra Aleatoria,Carta Aleatoria
 $DELETE_LYRICS,Delete Lyrics,Eliminar Letra,Excluir Letra
 $SOLVE,Solve,Resolver,Resolver
 $CLOSE,CLOSE,CERRAR,FECHAR
-$PISTA,Clue,Pista,Dica
+$CLUE,Clue,Pista,Dica
 $REVEAL_A_LETTER,Reveal a Letter,Revelar una Letra,Revelar uma Carta
 $REMOVE_A_LETTER,Remove A Letter,Quitar Una Letra,Remover Uma Carta
 $REVEAL_ANSWER,Reveal Answer,Revelar Respuesta,Revelar Resposta
@@ -38,6 +38,11 @@ $VIEW_AD,View Ad,Ver Anuncio,Ver Anúncio
 $CONGRATULATIONS,Congratulations,Felicitaciones,Parabéns
 $NOT_ONLY_CONTINUE,Not Only Continue,No Solo Continuar,Não Continue
 $REWARD_ALREADY_DELIVERED,Reward Already Delivered,Recompensa Ya Se Entregó,Recompensa Já Entregue
+$LOADING_ADS,"Loading...","Cargando...","Carregando..."
+$REWARD_CLAIMED,"This reward has already been claimed! Do you want to play this game?","¡Esta recompensa ya ha sido reclamada! ¿Quieres ir a jugar este juego?","Esta recompensa já foi reivindicada! Quer jogar este jogo?"
+$LATER,"Later","Más Tarde","Mais Tarde"
+$GO_NOW,"Go Now","Ir Ahora","Ir Agora"
+$INSTALL_GAME,"Install this exciting game now and receive 100 coins immediately!","¡Instala ahora este emocionante juego y recibe 100 monedas de inmediato!","Instale este emocionante jogo agora e receba 100 moedas imediatamente!"
 $CLAVE,EN,ES,PT
 $ARGELIA,algeria,argelia,argélia
 $ANGOLA,angola,angola,angola

@@ -141,3 +141,8 @@ items = [ "Spanish", ExtResource( 6 ), false, 0, null, "English", ExtResource( 7
 selected = 0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/btnAtras" to="." method="_on_btnAtras_pressed"]
+[connection signal="pressed" from="VBoxContainer/cbSonido" to="." method="_on_cbSonido_pressed"]
+[connection signal="pressed" from="VBoxContainer/cbMusica" to="." method="_on_cbMusica_pressed"]
+[connection signal="pressed" from="VBoxContainer/cbNotificacion" to="." method="_on_cbNotificacion_pressed"]
+[connection signal="pressed" from="VBoxContainer/cbAnuncio" to="." method="_on_cbAnuncio_pressed"]
+[connection signal="pressed" from="VBoxContainer/obIdiona" to="." method="_on_obIdiona_pressed"]

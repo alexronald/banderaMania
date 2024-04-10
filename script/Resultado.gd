@@ -13,7 +13,6 @@ var incremento= _Datos.recompensa;
 
 
 func _ready():
-	_AdMob.load_rewarded_video()
 	cambiarStilo(0)
 	progresBar();
 	iniciarGiro()
@@ -65,6 +64,7 @@ func darRecompensa():
 	_Datos.data["score"]= _Datos.data["score"]+_Datos.escore;
 
 	if _Datos.data["score"] >= _Datos.data["rango"]:
+		Audiocontrol.cambiarSonidi(4)
 		cambiarStilo(1)
 		_Datos.data["rango"] += 10
 	_Datos.save_data()
@@ -72,6 +72,7 @@ func darRecompensa():
 	_Datos.reniciarVariables()
 
 func darRecompensaBonus():
+	Audiocontrol.cambiarSonidi(4)
 	$Timer.start()
 	_Datos.data["coins"]= _Datos.data["coins"]+20;
 	_Datos.save_data()
@@ -91,6 +92,7 @@ func btnAtras():
 
 
 func _on_Siguinte_pressed():
+	Audiocontrol.activarEfectoUI()
 	if !btnNoContinuar.visible:
 		if get_parent().has_method("cambiarMenuJuego"):
 			_Datos.mensajebtn=false
@@ -100,15 +102,29 @@ func _on_Siguinte_pressed():
 			print(get_parent())
 			print("ERROR NO SE ENCUENTRO EL METHODO")
 	else:
-		_AdMob.connect("rewarded_video_closed",self,"videoAnuncioCerrado")
+		_AdMob.load_rewarded_video()
+		btnSigiente.text = tr("$LOADING_ADS")
+		btnSigiente.disabled = true
+		_AdMob.connect("rewarded_video_loaded",self,"mostrarVideo")
+		_AdMob.connect("rewarded_video_failed_to_load",self,"cargarVideo")
+		#_AdMob.connect("rewarded_video_closed",self,"videoAnuncioCerrado")
 		adscontrol.cargarMostraVideoAds()
 		print("dar_recoppesba")
 	pass # Replace with function body.
+func cargarVideo():
+	btnSigiente.text = tr("$REINTENTAR")
+	btnSigiente.disabled = false
+	_AdMob.load_rewarded_video()
+	
+func mostrarVideo():
+	_AdMob.show_rewarded_video()
+	_AdMob.connect("rewarded_video_closed",self,"videoAnuncioCerrado")
 
 func videoAnuncioCerrado():
 	darRecompensaBonus()
 	btnSigiente.text = tr("$NEXT")
 	btnNoContinuar.visible=false
+	btnSigiente.disabled = false
 	
 func _on_Timer_timeout():
 	var coinsActual = _Datos.data["coins"]
@@ -155,6 +171,7 @@ var estilos:Array=[
 ]
 	
 func _on_noContinuar_pressed():
+	Audiocontrol.activarEfectoUI()
 	if get_parent().has_method("cambiarMenuJuego"):
 		_Datos.mensajebtn=false
 		get_parent().cambiarMenuJuego();

@@ -13,4 +13,4 @@ Descarga ahora y comienza a desbloquear el mundo de las banderas. ¡Demuestra qu
 
 ¡Descarga ya Bandera Manía y demuestra tu dominio de las banderas alrededor del mundo
 
-![Searching AdMob node](images/search_node.png)
+![logo](recursos/icono-432_p.png)

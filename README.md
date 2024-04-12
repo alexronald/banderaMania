@@ -13,4 +13,4 @@ Descarga ahora y comienza a desbloquear el mundo de las banderas. ¡Demuestra qu
 
 ¡Descarga ya Bandera Manía y demuestra tu dominio de las banderas alrededor del mundo
 
-If the build succeeds, you can find the resulting `.aar` files in `./godot-google-play-billing/build/outputs/aar/`.
+![Searching AdMob node](images/search_node.png)

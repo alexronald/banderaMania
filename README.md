@@ -1,4 +1,4 @@
-# godot-google-play-billing
+# godot
 Godot Android plugin for the Google Play Billing library
 
 

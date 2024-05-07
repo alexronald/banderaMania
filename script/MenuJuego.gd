@@ -39,14 +39,17 @@ func btnAtras():
 		print("ERROR NO SE ENCUENTRO EL METHODO")
 		
 func reCrear():
-	btnAtras()
+	if get_parent().has_method("_on_nodo_juego_exited"):
+		get_parent()._on_nodo_juego_exited();
+		queue_free()
+#	btnAtras()
 
 func _ready():
 	_AdMob.load_rewarded_video()
 	conectarSIgnal()
 	
-	if !_Datos.mensajebtn:
-		print("mensage",_Datos.mensajebtn)
+	if !_Datos.nivelAsignado:
+		print("mensage",_Datos.nivelAsignado)
 		setNivel()
 		GridBtn.starGame();
 	else:
@@ -63,7 +66,7 @@ func _ready():
 	respuetas = tr(_Datos.lista[_Datos.nivel])
 	botones = get_tree().get_nodes_in_group("botones");
 	conectar();
-	separaEnFilas()
+	prepararCampos()
 	
 	#instanciar();
 	campos = get_tree().get_nodes_in_group("campo");
@@ -124,69 +127,38 @@ func pressed(boton):
 				break
 			pos += 1;
 
-func instanciar(fila, texto)->void:
-	texto = texto.strip_edges()
-	match fila:
-		1:
-			for i in texto.length():
-				if texto[i] == " ":
-					$respuesta.add_child(tspacio.instance());
-					print(texto[i])
-				else:
-					$respuesta.add_child(testura.instance());
-					resultado += str(0)
-		2:
-			for i in texto.length():
-				if texto[i] == " ":
-					$respuesta2.add_child(tspacio.instance());
-					print(texto[i])
-				else:
-					$respuesta2.add_child(testura.instance());
-					resultado += str(0)
-#	for i in respuetas.length():
-#		if i <= 8:
-#			if respuetas[i] == " ":
-#				$respuesta.add_child(tspacio.instance());
-#				print(respuetas[i])
-#			else:
-#				$respuesta.add_child(testura.instance());
-#				modificarrespuesta += respuetas[i]
-#				resultado += str(0)
-#		else:
-#			if respuetas[i] == " ":
-#				$respuesta2.add_child(tspacio.instance());
-#				print(respuetas[i])
-#			else:
-#				$respuesta2.add_child(testura.instance());
-#				modificarrespuesta += respuetas[i]
-#				resultado += str(0)
-#
-#	respuetas = modificarrespuesta
-
-func separaEnFilas():
+func prepararCampos():
 	var texto = tr(_Datos.lista[_Datos.nivel])
-	var palabras = texto.split(" ")
-	var i = 0
-	var cant = 0
-	var fila1 = ""
-	var fila2=""
+	var palalbras = texto.split(" ")
+	var agrupaciones =[]
+	var grupoActual=""
 	
-	for palabra in  palabras:
-		cant +=  palabras[i].length()
-		if cant <= 11:
-			fila1 = fila1 +  palabra + " "
+	for palabra in palalbras:
+		if grupoActual.length()+palabra.length()<=11:
+			grupoActual += " "+palabra
 		else:
-			fila2 = fila2 +  palabra+ " "
-		i += 1
-	
-	instanciar(1,fila1)
-	instanciar(2,fila2)
-	respuetas = sinSpacio()
-	print(fila1,fila2)
-	var longitud = texto.length()
-	print("PALBRAS ",palabras )
-	print("FILA1 ",fila1)
-	print("FILA2 ",fila2)
+			grupoActual = grupoActual.strip_edges()
+			agrupaciones.append(grupoActual)
+			grupoActual=palabra
+			print("fila")
+	if grupoActual:
+		print("fila")
+		grupoActual = grupoActual.strip_edges()
+		agrupaciones.append(grupoActual)
+	instacirCampos(agrupaciones)
+
+func instacirCampos(agrupaciones):
+	for grupo in agrupaciones:
+		var fila = HBoxContainer.new()
+		fila.alignment=1
+		$CenterContainer/VCampoContainer.add_child(fila)
+		for letra in grupo:
+			if letra != " ":
+				fila.add_child(testura.instance())
+				resultado += str(0)
+			else:
+				fila.add_child(tspacio.instance())
+			print(letra)
 
 func sinSpacio()->String:
 	var spacios = tr(_Datos.lista[_Datos.nivel])
@@ -239,18 +211,6 @@ func revicion()->void:
 				print(letra)
 				print(i)
 	pass
-
-func eliminarLetrasSobrante()->void:
-	var array:Array=GridBtn.getIndexLetrasInfiltrados();
-	if array:
-		var posicion = randi()%array.size();
-		botones[array[posicion]].disabled=true;
-		botones[array[posicion]].modulate="55ffffff";
-		array.remove(posicion)
-		print("hay contenido")
-	else:
-		print("no hay contenido")
-
 
 func resolver()->void:
 	var nuevoArray;
@@ -414,13 +374,29 @@ func _on_eliminarLetra_pressed():
 		coins -= 80;
 		menuPistas.hide();
 		get_tree().paused=false;
-		eliminarLetrasSobrante()
-		realizarCompra(2,coins)
+		if eliminarLetrasSobrante():
+			realizarCompra(2,coins)
+		else:
+			btnEleminarLetra.disabled=true
 	else:
 		$Control.onBtnCoinStore();
 		errorCompra();
 	pass
 
+func eliminarLetrasSobrante()->bool:
+	var array:Array=GridBtn.getIndexLetrasInfiltrados();
+	if array:
+		var posicion = randi()%array.size();
+		botones[array[posicion]].disabled=true;
+		botones[array[posicion]].modulate="55ffffff";
+		array.remove(posicion)
+		if array:
+			btnEleminarLetra.disabled=true
+		print("hay contenido")
+		return true
+	else:
+		print("no hay contenido")
+		return false
 
 func _on_resolver_pressed():
 	Audiocontrol.activarEfectoUI()
@@ -504,3 +480,32 @@ func videoAnuncioCerrado():
 func cargarAd()->void:
 	_AdMob.load_rewarded_video();
 	pass
+
+func _on_Touch_deslizar_derecha():
+	_Datos.nivel += 1
+	if _Datos.nivel > _Datos.lista.size()-1:
+		_Datos.nivel= clamp(_Datos.nivel,0,_Datos.lista.size()-1)	
+		return
+	_Datos.nivel= clamp(_Datos.nivel,0,_Datos.lista.size()-1)	
+	if get_parent().has_method("_on_nodo_juego_exited"):
+		get_parent()._on_nodo_juego_exited();
+		queue_free()
+		#emit_signal("tree_exited")
+		pass
+	pass # Replace with function body.
+
+
+func _on_Touch_deslizar_izquierda():
+	_Datos.nivel -= 1
+	if _Datos.nivel < 0:
+		_Datos.nivel= clamp(_Datos.nivel,0,_Datos.lista.size()-1)	
+		return
+	_Datos.nivel= clamp(_Datos.nivel,0,_Datos.lista.size()-1)	
+	
+	if get_parent().has_method("_on_nodo_juego_exited"):
+		get_parent()._on_nodo_juego_exited();
+		queue_free()
+		#emit_signal("tree_exited")
+		pass
+	print("Next")
+	pass # Replace with function body.

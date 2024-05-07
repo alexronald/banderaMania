@@ -144,7 +144,7 @@ var lista:Array=[
 	"$ALEMANIA",
 	"$ANDORRA",
 	"$AUSTRALIA",
-	"$AZERBAIYAN",
+#	"$AZERBAIYAN",
 	"$BELGICA",
 	"$BIELORRUSIA",
 	"$BOSNIAYHERZEGOVINA",
@@ -158,7 +158,7 @@ var lista:Array=[
 	"$ESTONIA",
 	"$FINLANDIA",
 	"$FRANCIA",
-	"$GEORGIA",
+#	"$GEORGIA",
 	"$GRECIA",
 	"$HUNGRIA",
 	"$IRLANDA",
@@ -207,7 +207,7 @@ var lista:Array=[
 var nivel = 0;
 var recompensa=20;
 var escore = 3;
-var mensajebtn = false;
+var nivelAsignado = false;
 
 const PATH = "user://data.dat"
 const PASS = "abc123"

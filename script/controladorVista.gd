@@ -7,6 +7,7 @@ var menuJugar = preload("res://vista/MenuJuego.tscn")
 var menuNiveles = preload("res://vista/menuNiveles.tscn")
 var menuResultado = preload("res://vista/Resultado.tscn")
 var menuRuleta = preload("res://vista/MenuRuleta.tscn")
+var menuActualizarVista=preload("res://vista/actualizarViata.tscn")
 
 func _ready():
 	cambiarMenuPricipal()
@@ -64,4 +65,13 @@ func cambiarMenuRuleta()->void:
 	add_child(menuRuleta.instance())
 	adsControl.cargarMostraInterstitialAds()
 
-
+func cambiarActualizarViata()->void:
+	if get_tree().paused:
+		get_tree().paused = !get_tree().paused
+	add_child(menuActualizarVista.instance())
+	
+	
+func _on_nodo_juego_exited():
+	var nodoJuego=get_node("MenuJuego")
+	nodoJuego.connect("tree_exited",self,"cambiarActualizarViata")
+	yield(nodoJuego,"tree_exited")

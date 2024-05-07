@@ -95,7 +95,7 @@ func _on_Siguinte_pressed():
 	Audiocontrol.activarEfectoUI()
 	if !btnNoContinuar.visible:
 		if get_parent().has_method("cambiarMenuJuego"):
-			_Datos.mensajebtn=false
+			_Datos.nivelAsignado=false
 			get_parent().cambiarMenuJuego();
 			queue_free()
 		else:
@@ -173,7 +173,7 @@ var estilos:Array=[
 func _on_noContinuar_pressed():
 	Audiocontrol.activarEfectoUI()
 	if get_parent().has_method("cambiarMenuJuego"):
-		_Datos.mensajebtn=false
+		_Datos.nivelAsignado=false
 		get_parent().cambiarMenuJuego();
 		queue_free()
 	pass # Replace with function body.

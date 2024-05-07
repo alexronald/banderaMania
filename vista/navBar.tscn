@@ -49,9 +49,12 @@ rect_min_size = Vector2( 540, 90 )
 color = Color( 0.133333, 0.133333, 0.180392, 1 )
 
 [node name="container" type="HBoxContainer" parent="."]
-margin_right = 540.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -265.0
+margin_right = 265.0
 margin_bottom = 95.0
-rect_min_size = Vector2( 540, 95 )
+rect_min_size = Vector2( 530, 95 )
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
@@ -59,9 +62,9 @@ custom_constants/separation = 34
 alignment = 1
 
 [node name="containe2" type="HBoxContainer" parent="container"]
-margin_left = 7.0
-margin_right = 157.0
+margin_right = 154.0
 margin_bottom = 95.0
+size_flags_horizontal = 3
 
 [node name="Button" type="Button" parent="container/containe2"]
 margin_right = 46.0
@@ -72,16 +75,18 @@ flat = true
 
 [node name="Titulo" type="Label" parent="container/containe2"]
 margin_left = 50.0
-margin_top = 31.0
 margin_right = 150.0
-margin_bottom = 63.0
+margin_bottom = 95.0
+size_flags_vertical = 1
 custom_fonts/font = SubResource( 5 )
 text = "$LEVEL"
+valign = 1
 
 [node name="Container1" type="HBoxContainer" parent="container"]
-margin_left = 191.0
-margin_right = 533.0
+margin_left = 188.0
+margin_right = 530.0
 margin_bottom = 95.0
+size_flags_horizontal = 10
 custom_constants/separation = 0
 alignment = 1
 

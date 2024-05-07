@@ -33,9 +33,9 @@ func _on_btn1_pressed():
 	var controladorVista = get_tree().get_root().get_node("controladorVista")
 	if controladorVista.has_method("cambiarMenuJuego"):
 		_Datos.nivel = int(number.text);
-		_Datos.mensajebtn=true
+		_Datos.nivelAsignado=true
 		controladorVista.cambiarMenuJuego();
-		print("msag",_Datos.mensajebtn)
+		print("msag",_Datos.nivelAsignado)
 		controladorVista.get_child(0).queue_free()
 	else:
 		print(get_parent())

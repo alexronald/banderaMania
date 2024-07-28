@@ -1,5 +1,6 @@
 extends Node
 
+
 var doblesAlbunTemp;
 var lista:Array=[
 	"$ANGOLA",
@@ -270,3 +271,4 @@ func cambiarIdioma():
 			TranslationServer.set_locale("en")
 		2:
 			TranslationServer.set_locale("pt")
+

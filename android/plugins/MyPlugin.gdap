@@ -1,0 +1,9 @@
+[config]
+
+name="MyPlugin"
+binary_type="local"
+binary="MyPlugin.1.0.0.release.aar"
+
+[dependencies]
+
+remote=["com.android.billingclient:billing:7.0.0"]

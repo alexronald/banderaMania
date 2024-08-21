@@ -26,8 +26,9 @@ var list_product:Dictionary = {}
 func _ready():
 	add_child(msg)
 	propiedadesMsg()
-	if Engine.has_singleton("GodotGooglePlayBilling"):
-		payment = Engine.get_singleton("GodotGooglePlayBilling")
+	if Engine.has_singleton("MyPlugin"):
+		payment = Engine.get_singleton("MyPlugin")
+		msg.text+="/n __ESTA CONECTADO__";
 		if not .is_connected("connected", self, "_on_connected"):
 			msg.text+="/n __ESTA CONECTADO__";
 			connectSignal()
@@ -76,7 +77,7 @@ func queryPurchases(type:String)->void:
 	
 func querySkuDetails(list:Array,type:String)->void:
 	if payment != null:
-		payment.querySkuDetails(list,type)
+		payment.queryProductDetails(list,type)
 
 func acknowledgePurchase(purchaseToken:String)->void:
 	if payment != null:
@@ -118,7 +119,7 @@ func buscarProducto(nameProduct:String):
 func _on_connected():
 	if payment != null:
 		emit_signal("connected");
-		payment.querySkuDetails(["consumible_item","coins_25000","coins_5000","coins_11000"], "inapp") # "subs" for subscriptions
+		payment.queryProductDetails(["consumible_item","coins_25000","coins_5000","coins_11000"], "inapp") # "subs" for subscriptions
 		#payment.querySkuDetails(["my_subs_item"], "subs") # "subs" for subscriptions
 		#var re = payment.queryPurchases("inapp")
 		#var subs = payment.purchase("subs")
